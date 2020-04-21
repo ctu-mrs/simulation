@@ -1,0 +1,11 @@
+location: .gitman
+sources:
+- name: px4
+  type: git
+  repo: git@mrs.felk.cvut.cz:uav/gazebo_simulation/firmware_simulation.git
+  sparse_paths:
+  -
+  rev: v1.10.1
+  link: ros_packages/px4
+  scripts:
+  - git submodule update --init --recursive --depth 1
