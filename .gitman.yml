@@ -9,3 +9,21 @@ sources:
   link: ros_packages/px4
   scripts:
   - git submodule update --init --recursive --depth 1
+- name: mrs_simulation
+  type: git
+  repo: git@mrs.felk.cvut.cz:spurnvoj/mrs_simulation.git
+  sparse_paths:
+  -
+  rev: master
+  link: ros_packages/mrs_simulation
+  scripts:
+  - git submodule update --init --recursive --depth 1
+- name: mrs_gazebo_common_resources
+  type: git
+  repo: git@mrs.felk.cvut.cz:uav/gazebo_simulation/mrs_gazebo_common_resources.git  
+  sparse_paths:
+  -
+  rev: devel
+  link: ros_packages/mrs_gazebo_common_resources
+  scripts:
+  - git submodule update --init --recursive --depth 1
