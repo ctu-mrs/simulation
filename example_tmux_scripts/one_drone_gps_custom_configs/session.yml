@@ -1,0 +1,54 @@
+name: simulation
+root: ./
+startup_window: status
+pre_window: export UAV_NAME=uav1; export RUN_TYPE=simulation; export UAV_TYPE=t650; export WORLD_NAME=simulation
+windows:
+  - roscore:
+      layout: tiled
+      panes:
+        - roscore
+  - gazebo:
+      layout: tiled
+      panes:
+        - waitForRos; roslaunch mrs_simulation simulation.launch world_name:=grass_plane gui:=true
+  - status:
+      layout: tiled
+      panes:
+        - waitForRos; roslaunch mrs_status status.launch
+  - spawn:
+      layout: tiled
+      panes:
+        - waitForSimulation; rosrun mrs_simulation spawn 1 --$UAV_TYPE --run --delete --enable-rangefinder --enable-ground-truth
+  - control:
+      layout: tiled
+      panes:
+        - waitForOdometry; roslaunch mrs_general core.launch config_uav_manager:=custom_configs/uav_manager.yaml config_control_manager:=custom_configs/control_manager.yaml config_uav_names:=custom_configs/uav_names.yaml
+  - takeoff:
+      layout: tiled
+      panes:
+        - waitForRos; roslaunch mrs_general automatic_start.launch
+        - 'waitForControl;
+          rosservice call /$UAV_NAME/mavros/cmd/arming 1;
+          rosservice call /$UAV_NAME/mavros/set_mode 0 offboard'
+  - goto:
+      layout: tiled
+      panes:
+        - 'history -s rosservice call /$UAV_NAME/control_manager/goto \"goal: \[0.0, 10.0, 1.5, 0.0\]\"'
+  - gazebo_camera_follow:
+      layout: tiled
+      panes:
+        - waitForOdometry; gz camera -c gzclient_camera -f uav1; history -s gz camera -c gzclient_camera -f uav1
+  - easy_control:
+      layout: tiled
+      panes:
+        - waitForControl; waitForControl; roslaunch mrs_general logitech_joystick.launch
+        - waitForControl; waitForControl; roslaunch mrs_rviz_interface rviz_nav_goal.launch
+  - rviz:
+      layout: tiled
+      panes:
+        - waitForControl; roslaunch mrs_testing rviz.launch
+        - waitForControl; roslaunch mrs_rviz_plugins load_robot.launch
+  - layout:
+      layout: tiled
+      panes:
+        - waitForControl; sleep 3; ~/.i3/layout_manager.sh ./layout.json

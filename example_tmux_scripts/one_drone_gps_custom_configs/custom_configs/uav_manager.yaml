@@ -1,0 +1,7 @@
+takeoff:
+
+  during_takeoff:
+    controller: "MpcController"
+
+  after_takeoff:
+    pirouette: false
