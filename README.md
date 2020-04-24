@@ -1,18 +1,21 @@
 # MRS gazebo simulation
 
-Catkin-based gazebo simulation of the MRS system
+Catkin-based gazebo simulation of the MRS system under ROS.
+
+- Installation: add this repository into your ros workspace.
 
 ## ROS Packages 
-- [mrs_simulation](ros_packages/mrs_simulation) 
-  - Support for spawning vehicles into gazebo simulation. 
-  - For more detail instructions see [README](ros_packages/mrs_simulation/README.md) 
-   
-- [mrs_gazebo_common_resources](ros_packages/mrs_gazebo_common_resources) 
-  - Common gazebo files (worlds, models and plugins) for the MRS system. 
-  - For more details see [README](ros_packages/mrs_gazebo_common_resources/README.md) 
 
-- [px4](ros_packages/px4) - Pixhawk Firmware  
-- [mavlink_sitl_gazebo](ros_packages/mavlink_sitl_gazebo) - PX4 gazebo files (worlds, models and plugins) for SITL with the Pixhawk 
+- [mrs_simulation](https://mrs.felk.cvut.cz/gitlab/github/mrs_simulation) 
+  - Support for spawning vehicles into gazebo simulation. 
+  - For more detail instructions see [README](https://mrs.felk.cvut.cz/gitlab/github/mrs_simulation/README.md) 
+   
+- [mrs_gazebo_common_resources](https://mrs.felk.cvut.cz/gitlab/uav/gazebo_simulation/mrs_gazebo_common_resources) 
+  - Common gazebo files (worlds, models and plugins) for the MRS system. 
+  - For more details see [README](https://mrs.felk.cvut.cz/gitlab/uav/gazebo_simulation/mrs_gazebo_common_resources/README.md) 
+
+- [px4](https://mrs.felk.cvut.cz/gitlab/uav/gazebo_simulation/firmware_simulation) - Pixhawk Firmware  
+- [mavlink_sitl_gazebo](https://mrs.felk.cvut.cz/gitlab/uav/gazebo_simulation/sitl_gazebo) - PX4 gazebo files (worlds, models and plugins) for SITL with the Pixhawk 
  
 ## Prepared examples  
 
