@@ -9,5 +9,9 @@
 # Runtime-python
 *.pyc
 
+# gitman
 .gitman
 .gitman.old
+
+# tmuxinator
+.tmuxinator.yml
