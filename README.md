@@ -5,7 +5,7 @@ Catkin-based gazebo simulation of the MRS system
 ## ROS Packages 
 - [mrs_simulation](ros_packages/mrs_simulation) 
   - Support for spawning vehicles into gazebo simulation. 
-  - For more detail instruction see [README](ros_packages/mrs_simulation/README.md) 
+  - For more detail instructions see [README](ros_packages/mrs_simulation/README.md) 
    
 - [mrs_gazebo_common_resources](ros_packages/mrs_gazebo_common_resources) 
   - Common gazebo files (worlds, models and plugins) for the MRS system. 
