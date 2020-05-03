@@ -28,13 +28,13 @@ pre_input="export UAV_NAME=uav1; export RUN_TYPE=simulation; export UAV_TYPE=f55
 input=(
   'Roscore' "roscore
 "
-  'Gazebo' "waitForRos; roslaunch simulation simulation.launch world_name:=grass_plane gui:=true
+  'Gazebo' "waitForRos; roslaunch mrs_simulation simulation.launch world_name:=grass_plane gui:=true
 "
   'Spawn' "waitForSimulation; rosrun mrs_simulation spawn 1 --$UAV_TYPE --run --delete --enable-rangefinder --enable-ground-truth
 "
-  'Control' "waitForOdometry; roslaunch mrs_general core.launch config_uav_manager:=./custom_configs/uav_manager.yaml
+  'Control' "waitForOdometry; roslaunch mrs_uav_general core.launch config_uav_manager:=./custom_configs/uav_manager.yaml
 "
-  'AutomaticStart' "waitForRos; roslaunch mrs_general automatic_start.launch
+  'AutomaticStart' "waitForSimulation; roslaunch mrs_uav_general automatic_start.launch
 "
   "PrepareUAV" "waitForControl; rosservice call /$UAV_NAME/mavros/cmd/arming 1; rosservice call /$UAV_NAME/mavros/set_mode 0 offboard
 "

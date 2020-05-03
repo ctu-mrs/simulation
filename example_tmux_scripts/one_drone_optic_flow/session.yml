@@ -15,7 +15,7 @@ windows:
   - status:
       layout: tiled
       panes:
-        - waitForRos; roslaunch mrs_uav_status status.launch
+        - waitForSimulation; roslaunch mrs_uav_status status.launch
   - spawn:
       layout: tiled
       panes:

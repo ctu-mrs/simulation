@@ -15,8 +15,8 @@ windows:
   - status:
       layout: tiled
       panes:
-        - export UAV_NAME=uav1; waitForRos; roslaunch mrs_uav_status status.launch
-        - export UAV_NAME=uav2; waitForRos; roslaunch mrs_uav_status status.launch
+        - export UAV_NAME=uav1; waitForSimulation; roslaunch mrs_uav_status status.launch
+        - export UAV_NAME=uav2; waitForSimulation; roslaunch mrs_uav_status status.launch
   - spawn:
       layout: tiled
       panes:
@@ -46,16 +46,16 @@ windows:
   - automatic_start:
       layout: tiled
       panes:
-        - export UAV_NAME=uav1; waitForRos; roslaunch mrs_uav_general automatic_start.launch
-        - export UAV_NAME=uav2; waitForRos; roslaunch mrs_uav_general automatic_start.launch
-        - export UAV_NAME=uav3; waitForRos; roslaunch mrs_uav_general automatic_start.launch
-        - export UAV_NAME=uav4; waitForRos; roslaunch mrs_uav_general automatic_start.launch
-        - export UAV_NAME=uav5; waitForRos; roslaunch mrs_uav_general automatic_start.launch
-        - export UAV_NAME=uav6; waitForRos; roslaunch mrs_uav_general automatic_start.launch
-        - export UAV_NAME=uav7; waitForRos; roslaunch mrs_uav_general automatic_start.launch
-        - export UAV_NAME=uav8; waitForRos; roslaunch mrs_uav_general automatic_start.launch
-        - export UAV_NAME=uav9; waitForRos; roslaunch mrs_uav_general automatic_start.launch
-        - export UAV_NAME=uav10; waitForRos; roslaunch mrs_uav_general automatic_start.launch
+        - export UAV_NAME=uav1; waitForSimulation; roslaunch mrs_uav_general automatic_start.launch
+        - export UAV_NAME=uav2; waitForSimulation; roslaunch mrs_uav_general automatic_start.launch
+        - export UAV_NAME=uav3; waitForSimulation; roslaunch mrs_uav_general automatic_start.launch
+        - export UAV_NAME=uav4; waitForSimulation; roslaunch mrs_uav_general automatic_start.launch
+        - export UAV_NAME=uav5; waitForSimulation; roslaunch mrs_uav_general automatic_start.launch
+        - export UAV_NAME=uav6; waitForSimulation; roslaunch mrs_uav_general automatic_start.launch
+        - export UAV_NAME=uav7; waitForSimulation; roslaunch mrs_uav_general automatic_start.launch
+        - export UAV_NAME=uav8; waitForSimulation; roslaunch mrs_uav_general automatic_start.launch
+        - export UAV_NAME=uav9; waitForSimulation; roslaunch mrs_uav_general automatic_start.launch
+        - export UAV_NAME=uav10; waitForSimulation; roslaunch mrs_uav_general automatic_start.launch
   - takeoff:
       layout: tiled
       panes:
@@ -76,56 +76,56 @@ windows:
         # #{ uav3
         - 'export UAV_NAME=uav3;
           waitForControl;
-          rosservice call /$UAV_NAME/control_manager/motors 1;
+          rosservice call /$UAV_NAME/mavros/cmd/arming 1;
           sleep 2;
           rosservice call /$UAV_NAME/mavros/set_mode 0 offboard'
         # #}
         # #{ uav4
         - 'export UAV_NAME=uav4;
           waitForControl;
-          rosservice call /$UAV_NAME/control_manager/motors 1;
+          rosservice call /$UAV_NAME/mavros/cmd/arming 1;
           sleep 2;
           rosservice call /$UAV_NAME/mavros/set_mode 0 offboard'
         # #}
         # #{ uav5
         - 'export UAV_NAME=uav5;
           waitForControl;
-          rosservice call /$UAV_NAME/control_manager/motors 1;
+          rosservice call /$UAV_NAME/mavros/cmd/arming 1;
           sleep 2;
           rosservice call /$UAV_NAME/mavros/set_mode 0 offboard'
         # #}
         # #{ uav6
         - 'export UAV_NAME=uav6;
           waitForControl;
-          rosservice call /$UAV_NAME/control_manager/motors 1;
+          rosservice call /$UAV_NAME/mavros/cmd/arming 1;
           sleep 2;
           rosservice call /$UAV_NAME/mavros/set_mode 0 offboard'
         # #}
         # #{ uav7
         - 'export UAV_NAME=uav7;
           waitForControl;
-          rosservice call /$UAV_NAME/control_manager/motors 1;
+          rosservice call /$UAV_NAME/mavros/cmd/arming 1;
           sleep 2;
           rosservice call /$UAV_NAME/mavros/set_mode 0 offboard'
         # #}
         # #{ uav8
         - 'export UAV_NAME=uav8;
           waitForControl;
-          rosservice call /$UAV_NAME/control_manager/motors 1;
+          rosservice call /$UAV_NAME/mavros/cmd/arming 1;
           sleep 2;
           rosservice call /$UAV_NAME/mavros/set_mode 0 offboard'
         # #}
         # #{ uav9
         - 'export UAV_NAME=uav9;
           waitForControl;
-          rosservice call /$UAV_NAME/control_manager/motors 1;
+          rosservice call /$UAV_NAME/mavros/cmd/arming 1;
           sleep 2;
           rosservice call /$UAV_NAME/mavros/set_mode 0 offboard'
         # #}
         # #{ uav10
         - 'export UAV_NAME=uav10;
           waitForControl;
-          rosservice call /$UAV_NAME/control_manager/motors 1;
+          rosservice call /$UAV_NAME/mavros/cmd/arming 1;
           sleep 2;
           rosservice call /$UAV_NAME/mavros/set_mode 0 offboard'
         # #}

@@ -15,7 +15,7 @@ windows:
   - status:
       layout: tiled
       panes:
-        - waitForRos; roslaunch mrs_uav_status status.launch
+        - waitForSimulation; roslaunch mrs_uav_status status.launch
   - spawn:
       layout: tiled
       panes:
@@ -27,7 +27,7 @@ windows:
   - takeoff:
       layout: tiled
       panes:
-        - waitForRos; roslaunch mrs_uav_general automatic_start.launch
+        - waitForSimulation; roslaunch mrs_uav_general automatic_start.launch
         - 'waitForControl;
           rosservice call /$UAV_NAME/mavros/cmd/arming 1;
           rosservice call /$UAV_NAME/mavros/set_mode 0 offboard'
