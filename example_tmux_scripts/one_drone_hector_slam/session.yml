@@ -15,7 +15,7 @@ windows:
   - status:
       layout: tiled
       panes:
-        - waitForRos; roslaunch mrs_status status.launch
+        - waitForRos; roslaunch mrs_uav_status status.launch
   - spawn:
       layout: tiled
       panes:
@@ -35,11 +35,11 @@ windows:
   - control:
       layout: tiled
       panes:
-        - waitForOdometry; roslaunch mrs_general core.launch config_control_manager:=./custom_configs/control_manager.yaml config_uav_manager:=./custom_configs/uav_manager.yaml
+        - waitForOdometry; roslaunch mrs_uav_general core.launch config_control_manager:=./custom_configs/control_manager.yaml config_uav_manager:=./custom_configs/uav_manager.yaml
   - takeoff:
       layout: tiled
       panes:
-        - waitForRos; roslaunch mrs_general automatic_start.launch
+        - waitForRos; roslaunch mrs_uav_general automatic_start.launch
         - 'waitForControl;
           rosservice call /$UAV_NAME/mavros/cmd/arming 1;
           rosservice call /$UAV_NAME/mavros/set_mode 0 offboard'
@@ -50,12 +50,12 @@ windows:
   - rviz:
       layout: tiled
       panes:
-        - waitForControl; roslaunch mrs_testing rviz.launch
+        - waitForControl; roslaunch mrs_uav_testing rviz.launch
         - waitForControl; roslaunch mrs_rviz_plugins load_robot.launch
   - easy_control:
       layout: tiled
       panes:
-        - waitForControl; waitForControl; roslaunch mrs_general logitech_joystick.launch
+        - waitForControl; waitForControl; roslaunch mrs_uav_general logitech_joystick.launch
         - waitForControl; waitForControl; roslaunch mrs_rviz_interface rviz_nav_goal.launch
   - layout:
       layout: tiled

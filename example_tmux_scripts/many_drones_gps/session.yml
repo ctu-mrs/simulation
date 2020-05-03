@@ -15,8 +15,8 @@ windows:
   - status:
       layout: tiled
       panes:
-        - export UAV_NAME=uav1; waitForRos; roslaunch mrs_status status.launch
-        - export UAV_NAME=uav2; waitForRos; roslaunch mrs_status status.launch
+        - export UAV_NAME=uav1; waitForRos; roslaunch mrs_uav_status status.launch
+        - export UAV_NAME=uav2; waitForRos; roslaunch mrs_uav_status status.launch
   - spawn:
       layout: tiled
       panes:
@@ -33,29 +33,29 @@ windows:
   - control:
       layout: tiled
       panes:
-        - export UAV_NAME=uav1; waitForOdometry; roslaunch mrs_general core.launch
-        - export UAV_NAME=uav2; waitForOdometry; roslaunch mrs_general core.launch
-        - export UAV_NAME=uav3; waitForOdometry; roslaunch mrs_general core.launch
-        - export UAV_NAME=uav4; waitForOdometry; roslaunch mrs_general core.launch
-        - export UAV_NAME=uav5; waitForOdometry; roslaunch mrs_general core.launch
-        - export UAV_NAME=uav6; waitForOdometry; roslaunch mrs_general core.launch
-        - export UAV_NAME=uav7; waitForOdometry; roslaunch mrs_general core.launch
-        - export UAV_NAME=uav8; waitForOdometry; roslaunch mrs_general core.launch
-        - export UAV_NAME=uav9; waitForOdometry; roslaunch mrs_general core.launch
-        - export UAV_NAME=uav10; waitForOdometry; roslaunch mrs_general core.launch
+        - export UAV_NAME=uav1; waitForOdometry; roslaunch mrs_uav_general core.launch
+        - export UAV_NAME=uav2; waitForOdometry; roslaunch mrs_uav_general core.launch
+        - export UAV_NAME=uav3; waitForOdometry; roslaunch mrs_uav_general core.launch
+        - export UAV_NAME=uav4; waitForOdometry; roslaunch mrs_uav_general core.launch
+        - export UAV_NAME=uav5; waitForOdometry; roslaunch mrs_uav_general core.launch
+        - export UAV_NAME=uav6; waitForOdometry; roslaunch mrs_uav_general core.launch
+        - export UAV_NAME=uav7; waitForOdometry; roslaunch mrs_uav_general core.launch
+        - export UAV_NAME=uav8; waitForOdometry; roslaunch mrs_uav_general core.launch
+        - export UAV_NAME=uav9; waitForOdometry; roslaunch mrs_uav_general core.launch
+        - export UAV_NAME=uav10; waitForOdometry; roslaunch mrs_uav_general core.launch
   - automatic_start:
       layout: tiled
       panes:
-        - export UAV_NAME=uav1; waitForRos; roslaunch mrs_general automatic_start.launch
-        - export UAV_NAME=uav2; waitForRos; roslaunch mrs_general automatic_start.launch
-        - export UAV_NAME=uav3; waitForRos; roslaunch mrs_general automatic_start.launch
-        - export UAV_NAME=uav4; waitForRos; roslaunch mrs_general automatic_start.launch
-        - export UAV_NAME=uav5; waitForRos; roslaunch mrs_general automatic_start.launch
-        - export UAV_NAME=uav6; waitForRos; roslaunch mrs_general automatic_start.launch
-        - export UAV_NAME=uav7; waitForRos; roslaunch mrs_general automatic_start.launch
-        - export UAV_NAME=uav8; waitForRos; roslaunch mrs_general automatic_start.launch
-        - export UAV_NAME=uav9; waitForRos; roslaunch mrs_general automatic_start.launch
-        - export UAV_NAME=uav10; waitForRos; roslaunch mrs_general automatic_start.launch
+        - export UAV_NAME=uav1; waitForRos; roslaunch mrs_uav_general automatic_start.launch
+        - export UAV_NAME=uav2; waitForRos; roslaunch mrs_uav_general automatic_start.launch
+        - export UAV_NAME=uav3; waitForRos; roslaunch mrs_uav_general automatic_start.launch
+        - export UAV_NAME=uav4; waitForRos; roslaunch mrs_uav_general automatic_start.launch
+        - export UAV_NAME=uav5; waitForRos; roslaunch mrs_uav_general automatic_start.launch
+        - export UAV_NAME=uav6; waitForRos; roslaunch mrs_uav_general automatic_start.launch
+        - export UAV_NAME=uav7; waitForRos; roslaunch mrs_uav_general automatic_start.launch
+        - export UAV_NAME=uav8; waitForRos; roslaunch mrs_uav_general automatic_start.launch
+        - export UAV_NAME=uav9; waitForRos; roslaunch mrs_uav_general automatic_start.launch
+        - export UAV_NAME=uav10; waitForRos; roslaunch mrs_uav_general automatic_start.launch
   - takeoff:
       layout: tiled
       panes:
