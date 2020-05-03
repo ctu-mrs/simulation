@@ -2,10 +2,10 @@ location: .gitman
 sources:
 - name: mrs_gazebo_common_resources
   type: git
-  repo: git@mrs.felk.cvut.cz:uav/gazebo_simulation/mrs_gazebo_common_resources.git
+  repo: git@github.com:ctu-mrs/mrs_gazebo_common_resources.git
   sparse_paths:
   -
-  rev: devel
+  rev: master
   link: ros_packages/mrs_gazebo_common_resources
   scripts:
   - git submodule update --init --recursive --depth 1
@@ -18,22 +18,12 @@ sources:
   link: ros_packages/mrs_simulation
   scripts:
   - git submodule update --init --recursive --depth 1
-- name: px4
+- name: px4_firmware
   type: git
-  repo: git@mrs.felk.cvut.cz:uav/gazebo_simulation/firmware_simulation.git
+  repo: git@github.com:ctu-mrs/px4_firmware.git
   sparse_paths:
   -
   rev: v1.10.1
-  link: ros_packages/px4
-  scripts:
-  - git submodule update --init --recursive --depth 1
-sources_locked:
-- name: mrs_simulation
-  type: git
-  repo: git@mrs.felk.cvut.cz:github/mrs_simulation.git
-  sparse_paths:
-  -
-  rev: 50955723972d5541102ec113f9c96d8438a4c2a3
-  link: ros_packages/mrs_simulation
+  link: ros_packages/px4_firmware
   scripts:
   - git submodule update --init --recursive --depth 1
