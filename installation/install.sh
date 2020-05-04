@@ -62,3 +62,7 @@ $MY_PATH/dependencies/gitman.sh
 ## | --------------------- Install git lfs --------------------- |
 
 $MY_PATH/dependencies/git_lfs.sh
+
+## | --------------- Install other dependencies --------------- |
+
+$MY_PATH/dependencies/other.sh
