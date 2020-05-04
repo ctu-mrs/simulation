@@ -72,4 +72,10 @@ gitman install --force
 $MY_PATH/../ros_packages/px4/Tools/setup/ubuntu.sh
 sudo apt -y upgrade # this was needed after the first installation to fix the libignition-fuel-...
 
+## | ---------------------- libgeographic --------------------- |
+
+# for apt-installed mavros
+cd /opt/ros/melodic/lib/mavros
+sudo ./install_geographiclib_datasets.sh
+
 exit 0
