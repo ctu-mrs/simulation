@@ -18,7 +18,7 @@ sources:
   link: ros_packages/mrs_simulation
   scripts:
   - git submodule update --init --recursive --depth 1
-- name: px4_firmware
+- name: px4
   type: git
   repo: git@github.com:ctu-mrs/px4_firmware.git
   sparse_paths:
