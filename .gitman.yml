@@ -27,3 +27,13 @@ sources:
   link: ros_packages/px4
   scripts:
   - git submodule update --init --recursive --depth 1
+sources_locked:
+- name: px4
+  type: git
+  repo: git@github.com:ctu-mrs/px4_firmware.git
+  sparse_paths:
+  -
+  rev: d5673c5fa7afbda2ef7af4db451a0fc0cc52f1f3
+  link: ros_packages/px4
+  scripts:
+  - git submodule update --init --recursive --depth 1
