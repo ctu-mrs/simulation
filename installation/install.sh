@@ -15,7 +15,7 @@ trap 'echo "\"${last_command}\" command failed with exit code $?"' ERR
 
 sudo apt-get -y install git
 
-## | ------------------- Unattanded install? ------------------ |
+## | ------------------- unattanded install? ------------------ |
 
 unattended=0
 subinstall_params=""
@@ -29,7 +29,7 @@ do
   fi
 done
 
-## | ----------------------- Install ROS ---------------------- |
+## | ----------------------- install ROS ---------------------- |
 
 default=y
 while true; do
@@ -55,14 +55,21 @@ while true; do
   fi
 done
 
-## | --------------------- Install Gitman --------------------- |
-
-$MY_PATH/dependencies/gitman.sh
-
-## | --------------------- Install git lfs --------------------- |
+## | --------------------- install git lfs -------------------- |
 
 $MY_PATH/dependencies/git_lfs.sh
 
-## | --------------- Install other dependencies --------------- |
+## | --------------------- install gitman --------------------- |
 
-$MY_PATH/dependencies/other.sh
+$MY_PATH/dependencies/gitman.sh
+
+## | ---------------- install gitman submodules --------------- |
+
+gitman install --force
+
+## | ---------------- install px4 dependencies ---------------- |
+
+$MY_PATH/../ros_packages/px4/Tools/setup/ubuntu.sh
+sudo apt -y upgrade # this was needed after the first installation to fix the libignition-fuel-...
+
+exit 0

@@ -28,6 +28,15 @@ sources:
   scripts:
   - git submodule update --init --recursive --depth 1
 sources_locked:
+- name: mrs_simulation
+  type: git
+  repo: git@github.com:ctu-mrs/mrs_simulation.git
+  sparse_paths:
+  -
+  rev: 0dd7a85163407c3d4a41ef9129194d807fb4a359
+  link: ros_packages/mrs_simulation
+  scripts:
+  - git submodule update --init --recursive --depth 1
 - name: px4
   type: git
   repo: git@github.com:ctu-mrs/px4_firmware.git
