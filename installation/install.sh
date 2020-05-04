@@ -72,10 +72,38 @@ gitman install --force
 $MY_PATH/../ros_packages/px4/Tools/setup/ubuntu.sh
 sudo apt -y upgrade # this was needed after the first installation to fix the libignition-fuel-...
 
-## | ---------------------- libgeographic --------------------- |
+## | --------------------- install mavros --------------------- |
 
-# for apt-installed mavros
-cd /opt/ros/melodic/lib/mavros
-sudo ./install_geographiclib_datasets.sh
+$MY_PATH/dependencies/mavros.sh
+
+## | --------------- add ROS sourcing to .bashrc -------------- |
+
+line="source /opt/ros/melodic/setup.bash"
+
+num=`cat ~/.bashrc | grep "$line" | wc -l`
+if [ "$num" -lt "1" ]; then
+
+  echo "Adding '$line' to your .bashrc"
+
+  # set bashrc
+  echo "
+$line" >> ~/.bashrc
+
+fi
+
+## | ------------- add Gazebo sourcing to .bashrc ------------- |
+
+line="source /usr/share/gazebo/setup.sh"
+
+num=`cat ~/.bashrc | grep "$line" | wc -l`
+if [ "$num" -lt "1" ]; then
+
+  echo "Adding '$line' to your .bashrc"
+
+  # set bashrc
+  echo "
+$line" >> ~/.bashrc
+
+fi
 
 exit 0
