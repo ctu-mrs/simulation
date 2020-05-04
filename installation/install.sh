@@ -4,15 +4,18 @@
 MY_PATH=`dirname "$0"`
 MY_PATH=`( cd "$MY_PATH" && pwd )`
 
+## | ----------------- trapping !=0 exitcodes ----------------- |
+
 set -e
 
-trap 'last_command=$current_command; current_command=$BASH_COMMAND; echo running "$current_command"' DEBUG
+trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "\"${last_command}\" command failed with exit code $?"' EXIT
 
-# install git
+## | ----------------------- install git ---------------------- |
+
 sudo apt-get -y install git
 
-# install gitman
+## | ------------------- Unattanded install? ------------------ |
 
 unattended=0
 subinstall_params=""
@@ -53,7 +56,9 @@ while true; do
 done
 
 ## | --------------------- Install Gitman --------------------- |
+
 $MY_PATH/dependencies/gitman.sh
 
 ## | --------------------- Install git lfs --------------------- |
+
 $MY_PATH/dependencies/git_lfs.sh
