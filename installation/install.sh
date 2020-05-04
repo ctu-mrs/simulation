@@ -9,7 +9,7 @@ MY_PATH=`( cd "$MY_PATH" && pwd )`
 set -e
 
 trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
-trap 'echo "\"${last_command}\" command failed with exit code $?"' EXIT
+trap 'echo "\"${last_command}\" command failed with exit code $?"' ERR
 
 ## | ----------------------- install git ---------------------- |
 
