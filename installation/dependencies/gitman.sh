@@ -11,5 +11,3 @@ sudo apt -y install python-pip python3-pip
 
 sudo pip3 install gitman
 sudo -H pip3 install gitman
-
-exit 0
