@@ -11,7 +11,7 @@ sources:
   - git submodule update --init --recursive --depth 1
 - name: mrs_simulation
   type: git
-  repo: git@mrs.felk.cvut.cz:github/mrs_simulation.git
+  repo: git@github.com:ctu-mrs/mrs_simulation.git
   sparse_paths:
   -
   rev: master
