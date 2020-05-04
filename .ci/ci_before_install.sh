@@ -1,5 +1,6 @@
 #!/bin/bash
 # author: Robert Penicka
+
 set -e
 
 echo "Starting install preparation" 
@@ -10,31 +11,36 @@ ssh-add ./.ci/deploy_key_github
 sudo apt-get update -qq
 sudo apt-get install dpkg git expect python-setuptools python3-setuptools python3-pip
 
-echo "clone uav_core to have install scripts"
-cd ~
-git clone git@github.com:ctu-mrs/uav_core.git
-cd uav_core
-./installation/scripts/install_ros.sh
-./installation/scripts/install_dependencies.sh
-./installation/scripts/install_git_lfs.sh
-cd $TRAVIS_BUILD_DIR
+# echo "clone uav_core to have install scripts"
+# cd ~
+# git clone git@github.com:ctu-mrs/uav_core.git
+# cd uav_core
+# ./installation/scripts/install_ros.sh
+# ./installation/scripts/install_dependencies.sh
+# ./installation/scripts/install_git_lfs.sh
+# cd $TRAVIS_BUILD_DIR
 
-
+./installation/install.sh
 echo "dependencies installed"
-git clean -fd
-git reset --hard
-git submodule deinit -f .
-git submodule sync
-git submodule update --init --recursive
-gitman install --force
-echo "gitman submodules downloaded"
+
+# git clean -fd
+# git reset --hard
+# git submodule deinit -f .
+# git submodule sync
+# git submodule update --init --recursive
+# gitman install --force
+# echo "gitman submodules downloaded"
+
+sudo apt -y install python-catkin-tools
+
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
 ln -s $TRAVIS_BUILD_DIR
 source /opt/ros/melodic/setup.bash
 cd ~/catkin_ws
 catkin init
-catkin config --profile debug --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_CXX_FLAGS='-std=c++17 -march=native -fno-diagnostics-color' -DCMAKE_C_FLAGS='-march=native -fno-diagnostics-color'
-catkin profile set debug
-echo "install part ended"
 
+# catkin config --profile debug --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_CXX_FLAGS='-std=c++17 -march=native -fno-diagnostics-color' -DCMAKE_C_FLAGS='-march=native -fno-diagnostics-color'
+# catkin profile set debug
+
+echo "install part ended"
