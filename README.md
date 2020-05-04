@@ -4,6 +4,9 @@ Catkin-based gazebo simulation of the MRS system under ROS.
 
 - Installation: add this repository into your ros workspace.
 
+### Status Ros Melodic                                                                                                                                             
+[![Build Status](https://travis-ci.com/ctu-mrs/simulation.svg?branch=master)](https://travis-ci.com/ctu-mrs/simulation)  
+
 ## ROS Packages 
 
 - [mrs_simulation](https://mrs.felk.cvut.cz/gitlab/github/mrs_simulation) 
