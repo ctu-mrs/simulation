@@ -24,6 +24,6 @@ sources:
   sparse_paths:
   -
   rev: v1.10.1
-  link: ros_packages/px4_firmware
+  link: ros_packages/px4
   scripts:
   - git submodule update --init --recursive --depth 1
