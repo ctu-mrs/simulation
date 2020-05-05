@@ -9,25 +9,15 @@ MY_PATH=`( cd "$MY_PATH" && pwd )`
 set -e
 
 trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
-trap 'echo "\"${last_command}\" command failed with exit code $?"' ERR
+trap 'echo "$0: \"${last_command}\" command failed with exit code $?"' ERR
+
+## | ----------- go to the directory of this script ----------- |
+
+cd "$MY_MATH"
 
 ## | ----------------------- install git ---------------------- |
 
 sudo apt-get -y install git
-
-## | ------------------- unattanded install? ------------------ |
-
-unattended=0
-subinstall_params=""
-for param in "$@"
-do
-  echo $param
-  if [ $param="--unattended" ]; then
-    echo "installing in unattended mode"
-    unattended=1
-    subinstall_params="--unattended"
-  fi
-done
 
 ## | ----------------------- install ROS ---------------------- |
 
