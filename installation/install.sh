@@ -31,29 +31,7 @@ done
 
 ## | ----------------------- install ROS ---------------------- |
 
-default=y
-while true; do
-  if [[ "$unattended" == "1" ]]
-  then
-    resp=$default
-  else
-    [[ -t 0 ]] && { read -t 10 -n 2 -p $'\e[1;32mInstall ROS? [y/n] (default: '"$default"$')\e[0m\n' resp || resp=$default ; }
-  fi
-  response=`echo $resp | sed -r 's/(.*)$/\1=/'`
-
-  if [[ $response =~ ^(y|Y)=$ ]]
-  then
-
-    $MY_PATH/dependencies/ros.sh
-
-    break
-  elif [[ $response =~ ^(n|N)=$ ]]
-  then
-    break
-  else
-    echo " What? \"$resp\" is not a correct answer. Try y+Enter."
-  fi
-done
+$MY_PATH/dependencies/ros.sh
 
 ## | --------------------- install git lfs -------------------- |
 
