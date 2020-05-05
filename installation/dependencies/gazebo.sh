@@ -3,7 +3,7 @@
 set -e
 
 trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
-trap 'echo "\"${last_command}\" command failed with exit code $?"' ERR
+trap 'echo "$0: \"${last_command}\" command failed with exit code $?"' ERR
 
 echo "Installing Gazebo"
 
@@ -17,5 +17,3 @@ sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `ls
 wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 sudo apt -y update
 sudo apt -y upgrade gazebo9 gazebo9-common gazebo9-plugin-base libgazebo9 libgazebo9-dev libignition-cmake-dev libignition-common libignition-common-dev libignition-fuel-tools1-1 libignition-fuel-tools1-dev libsdformat6 libsdformat6-dev sdformat-sdf
-
-exit 0

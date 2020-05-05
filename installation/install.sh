@@ -13,7 +13,7 @@ trap 'echo "$0: \"${last_command}\" command failed with exit code $?"' ERR
 
 ## | ----------- go to the directory of this script ----------- |
 
-cd "$MY_MATH"
+cd "$MY_PATH"
 
 ## | ----------------------- install git ---------------------- |
 
@@ -77,5 +77,3 @@ if [ "$num" -lt "1" ]; then
 $line" >> ~/.bashrc
 
 fi
-
-exit 0
