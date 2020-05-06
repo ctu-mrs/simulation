@@ -6,5 +6,5 @@ set -e
 echo "Starting test build" 
 cd ~/catkin_ws
 source /opt/ros/melodic/setup.bash
-catkin build -j1 --verbose
+catkin build
 echo "Ended test build"
