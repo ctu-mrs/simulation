@@ -20,16 +20,16 @@ windows:
   - spawn:
       layout: tiled
       panes:
-        - waitForSimulation; rosrun mrs_simulation spawn 1 --$UAV_TYPE --run --delete --enable-rangefinder --enable-ground-truth
-        - waitForSimulation; rosrun mrs_simulation spawn 2 --$UAV_TYPE --run --delete --enable-rangefinder --enable-ground-truth
-        - waitForSimulation; rosrun mrs_simulation spawn 3 --$UAV_TYPE --run --delete --enable-rangefinder --enable-ground-truth
-        - waitForSimulation; rosrun mrs_simulation spawn 4 --$UAV_TYPE --run --delete --enable-rangefinder --enable-ground-truth
-        - waitForSimulation; rosrun mrs_simulation spawn 5 --$UAV_TYPE --run --delete --enable-rangefinder --enable-ground-truth
-        - waitForSimulation; rosrun mrs_simulation spawn 6 --$UAV_TYPE --run --delete --enable-rangefinder --enable-ground-truth
-        - waitForSimulation; rosrun mrs_simulation spawn 7 --$UAV_TYPE --run --delete --enable-rangefinder --enable-ground-truth
-        - waitForSimulation; rosrun mrs_simulation spawn 8 --$UAV_TYPE --run --delete --enable-rangefinder --enable-ground-truth
-        - waitForSimulation; rosrun mrs_simulation spawn 9 --$UAV_TYPE --run --delete --enable-rangefinder --enable-ground-truth
-        - waitForSimulation; rosrun mrs_simulation spawn 10 --$UAV_TYPE --run --delete --enable-rangefinder --enable-ground-truth
+        - waitForSimulation; spawn_uav 1 --$UAV_TYPE --run --delete --enable-rangefinder --enable-ground-truth
+        - waitForSimulation; spawn_uav 2 --$UAV_TYPE --run --delete --enable-rangefinder --enable-ground-truth
+        - waitForSimulation; spawn_uav 3 --$UAV_TYPE --run --delete --enable-rangefinder --enable-ground-truth
+        - waitForSimulation; spawn_uav 4 --$UAV_TYPE --run --delete --enable-rangefinder --enable-ground-truth
+        - waitForSimulation; spawn_uav 5 --$UAV_TYPE --run --delete --enable-rangefinder --enable-ground-truth
+        - waitForSimulation; spawn_uav 6 --$UAV_TYPE --run --delete --enable-rangefinder --enable-ground-truth
+        - waitForSimulation; spawn_uav 7 --$UAV_TYPE --run --delete --enable-rangefinder --enable-ground-truth
+        - waitForSimulation; spawn_uav 8 --$UAV_TYPE --run --delete --enable-rangefinder --enable-ground-truth
+        - waitForSimulation; spawn_uav 9 --$UAV_TYPE --run --delete --enable-rangefinder --enable-ground-truth
+        - waitForSimulation; spawn_uav 10 --$UAV_TYPE --run --delete --enable-rangefinder --enable-ground-truth
   - control:
       layout: tiled
       panes:

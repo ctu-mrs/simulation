@@ -30,7 +30,7 @@ input=(
 "
   'Gazebo' "waitForRos; roslaunch mrs_simulation simulation.launch world_name:=grass_plane gui:=true
 "
-  'Spawn' "waitForSimulation; rosrun mrs_simulation spawn 1 --$UAV_TYPE --run --delete --enable-rangefinder --enable-ground-truth
+  'Spawn' "waitForSimulation; spawn_uav 1 --$UAV_TYPE --run --delete --enable-rangefinder --enable-ground-truth
 "
   'Control' "waitForOdometry; roslaunch mrs_uav_general core.launch config_uav_manager:=./custom_configs/uav_manager.yaml
 "

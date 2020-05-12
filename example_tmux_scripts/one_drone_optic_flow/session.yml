@@ -19,7 +19,7 @@ windows:
   - spawn:
       layout: tiled
       panes:
-        - waitForSimulation; rosrun mrs_simulation spawn 1 --$UAV_TYPE --run --delete --enable-rangefinder --enable-bluefox-camera --enable-ground-truth --enable-ground-truth
+        - waitForSimulation; spawn_uav 1 --$UAV_TYPE --run --delete --enable-rangefinder --enable-bluefox-camera --enable-ground-truth --enable-ground-truth
   - control:
       layout: tiled
       panes:
