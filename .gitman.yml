@@ -33,7 +33,7 @@ sources_locked:
   repo: https://github.com/ctu-mrs/mrs_gazebo_common_resources.git
   sparse_paths:
   -
-  rev: d879e9fc7ed6d4ad8660cf08fbb1f0ea55c66852
+  rev: 0c6595e6c7d7acd61171408cd2decbf73da3fcc2
   link: ros_packages/mrs_gazebo_common_resources
   scripts:
   - git submodule update --init --recursive --depth 1
@@ -55,3 +55,4 @@ sources_locked:
   link: ros_packages/px4
   scripts:
   - git submodule update --init --recursive --depth 1
+groups: []
