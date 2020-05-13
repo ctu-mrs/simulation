@@ -19,7 +19,7 @@ windows:
   - spawn:
       layout: tiled
       panes:
-        - waitForSimulation; rosrun mrs_simulation spawn 1 --$UAV_TYPE --run --delete --enable-rangefinder
+        - waitForSimulation; spawn_uav 1 --$UAV_TYPE --run --delete --enable-rangefinder
   - control:
       layout: tiled
       panes:

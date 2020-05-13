@@ -20,9 +20,9 @@ windows:
   - spawn:
       layout: tiled
       panes:
-        - waitForSimulation; rosrun mrs_simulation spawn 1 --$UAV_TYPE --run --delete --enable-rangefinder --enable-bluefox-camera --enable-rplidar
-        - waitForSimulation; rosrun mrs_simulation spawn 2 --$UAV_TYPE --run --delete --enable-rangefinder --enable-bluefox-camera --enable-rplidar
-        - waitForSimulation; rosrun mrs_simulation spawn 3 --$UAV_TYPE --run --delete --enable-rangefinder --enable-bluefox-camera --enable-rplidar
+        - waitForSimulation; spawn_uav 1 --$UAV_TYPE --run --delete --enable-rangefinder --enable-bluefox-camera --enable-rplidar
+        - waitForSimulation; spawn_uav 2 --$UAV_TYPE --run --delete --enable-rangefinder --enable-bluefox-camera --enable-rplidar
+        - waitForSimulation; spawn_uav 3 --$UAV_TYPE --run --delete --enable-rangefinder --enable-bluefox-camera --enable-rplidar
   - optic_flow:
       layout: tiled
       panes:
