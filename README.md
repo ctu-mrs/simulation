@@ -4,18 +4,14 @@
 
 ## Modules
 
-| ROS Package                                                             | Ubuntu | Status                                                                                                                                      |
-|-------------------------------------------------------------------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------|
-| [mrs_simulation](https://github.com/ctu-mrs/mrs_simulation)                     | Bionic | [![Build Status](https://travis-ci.com/ctu-mrs/mrs_simulation.svg?branch=master)](https://travis-ci.com/ctu-mrs/mrs_simulation)                     |
-| [mrs_gazebo_common_resources](https://github.com/ctu-mrs/mrs_gazebo_common_resources)                     | Bionic | [![Build Status](https://travis-ci.com/ctu-mrs/mrs_gazebo_common_resources.svg?branch=master)](https://travis-ci.com/ctu-mrs/mrs_gazebo_common_resources)                     |
-
-* [mrs_simulation](https://github.com/ctu-mrs/mrs_simulation)
+* [mrs_simulation](https://github.com/ctu-mrs/mrs_simulation) [![Build Status](https://travis-ci.com/ctu-mrs/mrs_simulation.svg?branch=master)](https://travis-ci.com/ctu-mrs/mrs_simulation)
   * Support for Gazebo simulation and spawning vehicles.
 
-* [mrs_gazebo_common_resources](https://github.com/ctu-mrs/mrs_gazebo_common_resources)
+* [mrs_gazebo_common_resources](https://github.com/ctu-mrs/mrs_gazebo_common_resources) [![Build Status](https://travis-ci.com/ctu-mrs/mrs_gazebo_common_resources.svg?branch=master)](https://travis-ci.com/ctu-mrs/mrs_gazebo_common_resources)
   * MRS Gazebo files: worlds, models and plugins.
 
-* [px4](https://github.com/ctu-mrs/px4_firmware) - Pixhawk firmware
+* [px4](https://github.com/ctu-mrs/px4_firmware) [![Build Status](https://travis-ci.com/ctu-mrs/px4_firmware.svg?branch=master)](https://travis-ci.com/ctu-mrs/px4_firmware)
+  * Pixhawk firmware
 * [mavlink_sitl_gazebo](https://github.com/ctu-mrs/px4_sitl_gazebo) - PX4 gazebo files (worlds, models and plugins) for SITL with the Pixhawk
 
 ## System requirements
