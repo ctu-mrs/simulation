@@ -2,17 +2,13 @@
 
 ![](.fig/thumbnail.jpg)
 
-## Modules
-
-* [mrs_simulation](https://github.com/ctu-mrs/mrs_simulation) [![Build Status](https://travis-ci.com/ctu-mrs/mrs_simulation.svg?branch=master)](https://travis-ci.com/ctu-mrs/mrs_simulation)
-  * Support for Gazebo simulation and spawning vehicles.
-
-* [mrs_gazebo_common_resources](https://github.com/ctu-mrs/mrs_gazebo_common_resources) [![Build Status](https://travis-ci.com/ctu-mrs/mrs_gazebo_common_resources.svg?branch=master)](https://travis-ci.com/ctu-mrs/mrs_gazebo_common_resources)
-  * MRS Gazebo files: worlds, models and plugins.
-
-* [px4](https://github.com/ctu-mrs/px4_firmware) [![Build Status](https://travis-ci.com/ctu-mrs/px4_firmware.svg?branch=master)](https://travis-ci.com/ctu-mrs/px4_firmware)
-  * Pixhawk firmware
-* [mavlink_sitl_gazebo](https://github.com/ctu-mrs/px4_sitl_gazebo) - PX4 gazebo files (worlds, models and plugins) for SITL with the Pixhawk
+## Submodules
+| ROS Package                                                                           | Ubuntu | Status                                                                                                                                                    | Description                                                                                             |
+|---------------------------------------------------------------------------------------|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| [mrs_simulation](https://github.com/ctu-mrs/mrs_simulation)                           | Bionic | [![Build Status](https://travis-ci.com/ctu-mrs/mrs_simulation.svg?branch=master)](https://travis-ci.com/ctu-mrs/mrs_simulation)                           | Support for spawning vehicles into Gazebo simulation, where user can select from multiple UAV platforms |
+| [mrs_gazebo_common_resources](https://github.com/ctu-mrs/mrs_gazebo_common_resources) | Bionic | [![Build Status](https://travis-ci.com/ctu-mrs/mrs_gazebo_common_resources.svg?branch=master)](https://travis-ci.com/ctu-mrs/mrs_gazebo_common_resources) | MRS Gazebo files: worlds, models and plugins                                                            |
+| [px4](https://github.com/ctu-mrs/px4_firmware)                                        | Bionic | [![Build Status](https://travis-ci.com/ctu-mrs/px4_firmware.svg?branch=master)](https://travis-ci.com/ctu-mrs/px4_firmware)                               | PX4 Pixhawk firmware                                                                                    |
+| [mavlink_sitl_gazebo](https://github.com/ctu-mrs/px4_sitl_gazebo)                     | Bionic | [![Build Status](https://travis-ci.com/ctu-mrs/px4_firmware.svg?branch=master)](https://travis-ci.com/ctu-mrs/px4_firmware)                               | PX4 Gazebo files (worlds, models and plugins) for SITL with the Pixhawk                                 |
 
 ## System requirements
 
@@ -34,6 +30,8 @@ Bare tmux script (similar to the one used on real UAVs):
 
 - [example_tmux_scripts/just_flying_bare_tmux](example_tmux_scripts/just_flying_bare_tmux)
 
+For detail description of script capabilities for spawning vehicles see [mrs_simulation](https://github.com/ctu-mrs/mrs_simulation).
+
 ## Installing simulation
 
 The recommended way is to install the whole [MRS UAV system](https://github.com/ctu-mrs/mrs_uav_system).
@@ -51,3 +49,4 @@ The `install.sh` script will add the following to your .bashrc:
 source /opt/ros/melodic/setup.bash
 source /usr/share/gazebo/setup.sh
 ```
+
