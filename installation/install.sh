@@ -38,7 +38,7 @@ gitman install --force
 ## | ---------------- install px4 dependencies ---------------- |
 
 $MY_PATH/../ros_packages/px4/Tools/setup/ubuntu.sh --no-nuttx --no-sim-tool
-sudo apt -y upgrade # this was needed after the first installation to fix the libignition-fuel-...
+sudo apt -y upgrade 'libignition-fuel-*' # this was needed after the first installation to fix the libignition-fuel-...
 
 ## | --------------------- install gazebo --------------------- |
 
