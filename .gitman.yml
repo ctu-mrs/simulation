@@ -33,7 +33,7 @@ sources_locked:
   repo: https://github.com/ctu-mrs/mrs_gazebo_common_resources.git
   sparse_paths:
   -
-  rev: 0c6595e6c7d7acd61171408cd2decbf73da3fcc2
+  rev: bb887cdb2b8a084465ded6e1dd1514eef592887f
   link: ros_packages/mrs_gazebo_common_resources
   scripts:
   - git submodule update --init --recursive --depth 1
@@ -42,7 +42,7 @@ sources_locked:
   repo: https://github.com/ctu-mrs/mrs_simulation.git
   sparse_paths:
   -
-  rev: 3f21ece9405dcf31fc728047a7a544db9ec08e42
+  rev: 8e3ad6bed85d7a21fd386bcf70ac6f3bceb0ef91
   link: ros_packages/mrs_simulation
   scripts:
   - git submodule update --init --recursive --depth 1
@@ -51,7 +51,7 @@ sources_locked:
   repo: https://github.com/ctu-mrs/px4_firmware.git
   sparse_paths:
   -
-  rev: 05b8eb670d21427265edce1188360735de07701e
+  rev: 5f756e495caddfaa597fa5cc785b5c1f0aeeb436
   link: ros_packages/px4_firmware
   scripts:
   - git submodule update --init --recursive --depth 1
