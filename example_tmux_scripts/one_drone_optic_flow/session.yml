@@ -48,7 +48,7 @@ windows:
       layout: tiled
       panes:
         - waitForControl; waitForControl; roslaunch mrs_uav_general logitech_joystick.launch
-        - waitForControl; waitForControl; roslaunch mrs_rviz_interface rviz_nav_goal.launch
+        - waitForControl; waitForControl; roslaunch mrs_rviz_plugins rviz_interface.launch
   - layout:
       layout: tiled
       panes:
