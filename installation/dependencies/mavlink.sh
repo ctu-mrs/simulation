@@ -50,8 +50,10 @@ then
   [ -z "$DRYRUN" ] && sudo apt -y install python-future python3-future
 
   echo "$0: Checking out the desired release"
-  [ -z "$DRYRUN" ] && cd "$MY_PATH/../../lib/mavlink-gbp-release/"
-  [ -z "$DRYRUN" ] && # git checkout a131e4bd665d2dc7f822797faf13d783fcd4bb8a # release/melodic/mavlink/2019.5.20-1
+  [ -z "$DRYRUN" ] && cd /tmp
+  [ -z "$DRYRUN" ] && git clone https://github.com/mavlink/mavlink-gbp-release
+  [ -z "$DRYRUN" ] && cd mavlink-gbp-release
+  [ -z "$DRYRUN" ] && git checkout 19c4fc6006d88636a5b8b5f2e608bfcdf80e6620
   [ -z "$DRYRUN" ] && bloom-generate rosdebian --os-name ubuntu --ros-distro melodic
 
   echo "$0: Building mavlink"
@@ -62,10 +64,6 @@ then
 
   echo "$0: Installing mavlink"
   [ -z "$DRYRUN" ] && sudo make install
-
-  echo "$0: Cleaning after Mavlink compilation"
-  [ -z "$DRYRUN" ] && cd "$MY_PATH/../../lib/mavlink-gbp-release/"
-  [ -z "$DRYRUN" ] && git clean -fd
 
 fi
 
