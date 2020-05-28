@@ -49,6 +49,9 @@ then
   [ -z "$DRYRUN" ] && sudo -H pip3 install --user future
   [ -z "$DRYRUN" ] && sudo apt -y install python-future python3-future
 
+  echo "$0: Installing python bloom"
+  [ -z "$DRYRUN" ] && sudo apt -y install python-bloom
+
   echo "$0: Checking out the desired release"
   [ -z "$DRYRUN" ] && cd /tmp
   [ -z "$DRYRUN" ] && git clone https://github.com/mavlink/mavlink-gbp-release
