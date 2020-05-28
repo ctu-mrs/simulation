@@ -40,13 +40,13 @@ gitman install --force
 $MY_PATH/../ros_packages/px4_firmware/Tools/setup/ubuntu.sh --no-nuttx --no-sim-tool
 sudo apt -y upgrade 'libignition-fuel-*' # this was needed after the first installation to fix the libignition-fuel-...
 
+## | -------------------- install mavlink --------------------- |
+
+$MY_PATH/dependencies/mavlink.sh --install
+
 ## | --------------------- install gazebo --------------------- |
 
-# $MY_PATH/dependencies/gazebo.sh
-
-## | --------------------- install mavros --------------------- |
-
-# $MY_PATH/dependencies/mavlink.sh --install
+$MY_PATH/dependencies/gazebo.sh
 
 ## | --------------- add ROS sourcing to .bashrc -------------- |
 
