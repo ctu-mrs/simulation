@@ -42,11 +42,11 @@ sudo apt -y upgrade 'libignition-fuel-*' # this was needed after the first insta
 
 ## | --------------------- install gazebo --------------------- |
 
-$MY_PATH/dependencies/gazebo.sh
+# $MY_PATH/dependencies/gazebo.sh
 
 ## | --------------------- install mavros --------------------- |
 
-$MY_PATH/dependencies/mavlink.sh --compile
+# $MY_PATH/dependencies/mavlink.sh --install
 
 ## | --------------- add ROS sourcing to .bashrc -------------- |
 
