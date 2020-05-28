@@ -46,7 +46,7 @@ $MY_PATH/dependencies/gazebo.sh
 
 ## | --------------------- install mavros --------------------- |
 
-$MY_PATH/dependencies/mavros.sh
+$MY_PATH/dependencies/mavlink.sh --compile
 
 ## | --------------- add ROS sourcing to .bashrc -------------- |
 

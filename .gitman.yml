@@ -9,6 +9,15 @@ sources:
   link: ros_packages/mrs_gazebo_common_resources
   scripts:
   - git submodule update --init --recursive --depth 1
+- name: mavlink-gbp-release
+  type: git
+  repo: https://github.com/mavlink/mavlink-gbp-release
+  sparse_paths:
+  -
+  rev: 19c4fc6006d88636a5b8b5f2e608bfcdf80e6620
+  link: lib/mavlink-gbp-release
+  scripts:
+  - git submodule update --init --recursive
 - name: mrs_simulation
   type: git
   repo: https://github.com/ctu-mrs/mrs_simulation.git
