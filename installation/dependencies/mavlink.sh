@@ -57,6 +57,7 @@ then
   [ -z "$DRYRUN" ] && git clone https://github.com/mavlink/mavlink-gbp-release
   [ -z "$DRYRUN" ] && cd mavlink-gbp-release
   [ -z "$DRYRUN" ] && git checkout 19c4fc6006d88636a5b8b5f2e608bfcdf80e6620
+  [ -z "$DRYRUN" ] && sudo rosdep init
   [ -z "$DRYRUN" ] && bloom-generate rosdebian --os-name ubuntu --ros-distro melodic
 
   echo "$0: Building mavlink"
