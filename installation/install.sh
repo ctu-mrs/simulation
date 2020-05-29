@@ -40,10 +40,6 @@ gitman install --force
 $MY_PATH/../ros_packages/px4_firmware/Tools/setup/ubuntu.sh --no-nuttx --no-sim-tool
 sudo apt -y upgrade 'libignition-fuel-*' # this was needed after the first installation to fix the libignition-fuel-...
 
-## | --------------------- install gazebo --------------------- |
-
-# $MY_PATH/dependencies/gazebo.sh
-
 ## | --------------- add ROS sourcing to .bashrc -------------- |
 
 line="source /opt/ros/melodic/setup.bash"
