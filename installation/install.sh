@@ -42,7 +42,7 @@ sudo apt -y upgrade 'libignition-fuel-*' # this was needed after the first insta
 
 ## | --------------------- install gazebo --------------------- |
 
-$MY_PATH/dependencies/gazebo.sh
+# $MY_PATH/dependencies/gazebo.sh
 
 ## | --------------- add ROS sourcing to .bashrc -------------- |
 
