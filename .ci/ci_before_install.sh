@@ -11,9 +11,6 @@ ssh-add ./.ci/deploy_key_github
 sudo apt-get update -qq
 sudo apt-get install dpkg git expect python-setuptools python3-setuptools python3-pip
 
-# will need this to test the compilation
-sudo apt -y install python-catkin-tools
-
 echo "creating workspace"
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
