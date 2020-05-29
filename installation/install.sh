@@ -44,10 +44,6 @@ sudo apt -y upgrade 'libignition-fuel-*' # this was needed after the first insta
 
 $MY_PATH/dependencies/gazebo.sh
 
-## | --------------------- install mavros --------------------- |
-
-$MY_PATH/dependencies/mavros.sh
-
 ## | --------------- add ROS sourcing to .bashrc -------------- |
 
 line="source /opt/ros/melodic/setup.bash"
