@@ -11,10 +11,6 @@ ssh-add ./.ci/deploy_key_github
 sudo apt-get update -qq
 sudo apt-get install dpkg git expect python-setuptools python3-setuptools python3-pip
 
-echo "creating workspace"
-mkdir -p ~/catkin_ws/src
-cd ~/catkin_ws/src
-
 echo "installing uav_core"
 git clone https://github.com/ctu-mrs/uav_core
 cd uav_core
@@ -24,6 +20,8 @@ echo "run the main install.sh"
 cd $TRAVIS_BUILD_DIR
 ./installation/install.sh
 
+echo "creating workspace"
+mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
 ln -s $TRAVIS_BUILD_DIR
 source /opt/ros/melodic/setup.bash
