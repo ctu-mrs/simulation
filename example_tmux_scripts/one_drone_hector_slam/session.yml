@@ -23,7 +23,7 @@ windows:
   - hector_slam:
       layout: tiled
       panes:
-        - waitForOdometry; roslaunch hector_mapping uav.launch
+        - waitForOdometry; roslaunch mrs_uav_general hector_slam.launch
   - optic_flow:
       layout: tiled
       panes:

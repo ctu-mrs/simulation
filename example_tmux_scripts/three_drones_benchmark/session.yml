@@ -32,9 +32,9 @@ windows:
   - hector_slam:
       layout: tiled
       panes:
-        - export UAV_NAME=uav1; waitForOdometry; roslaunch hector_mapping uav.launch
-        - export UAV_NAME=uav2; waitForOdometry; roslaunch hector_mapping uav.launch
-        - export UAV_NAME=uav3; waitForOdometry; roslaunch hector_mapping uav.launch
+        - export UAV_NAME=uav1; waitForOdometry; roslaunch mrs_uav_general hector_slam.launch
+        - export UAV_NAME=uav2; waitForOdometry; roslaunch mrs_uav_general hector_slam.launch
+        - export UAV_NAME=uav3; waitForOdometry; roslaunch mrs_uav_general hector_slam.launch
   - control:
       layout: tiled
       panes:
