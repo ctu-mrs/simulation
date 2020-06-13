@@ -36,7 +36,7 @@ input=(
 "
   'AutomaticStart' "waitForSimulation; roslaunch mrs_uav_general automatic_start.launch
 "
-  "PrepareUAV" "waitForControl; rosservice call /$UAV_NAME/mavros/cmd/arming 1; rosservice call /$UAV_NAME/mavros/set_mode 0 offboard
+  "PrepareUAV" "waitForControl; rosservice call /$UAV_NAME/mavros/cmd/arming 1; sleep 2; rosservice call /$UAV_NAME/mavros/set_mode 0 offboard
 "
   'Camera_follow' "waitForOdometry; gz camera -c gzclient_camera -f $UAV_NAME"
   'GoTo' "rosservice call /$UAV_NAME/control_manager/goto \"goal: [15.0, 15.0, 2.0, 0.0]\""

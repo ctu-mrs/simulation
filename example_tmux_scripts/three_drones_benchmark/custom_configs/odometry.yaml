@@ -13,11 +13,10 @@ heading_estimator: "HECTOR"
 
 # Active estimators are started at node launch and can be switched to during flight
 state_estimators:
-  active: ["OPTFLOW", "HECTOR", "ICP", "GPS"]
+  active: ["OPTFLOW", "HECTOR", "ICP"]
 
 heading_estimators:
-  active: ["GYRO", "OPTFLOW", "HECTOR", "ICP", "PIXHAWK"]
+  active: ["GYRO", "OPTFLOW", "HECTOR", "ICP"]
 
-gps_available: true
 optflow_available: true
 lidar_available: true

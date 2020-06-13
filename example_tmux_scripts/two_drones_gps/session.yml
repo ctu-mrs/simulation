@@ -38,12 +38,14 @@ windows:
         - 'export UAV_NAME=uav1;
           waitForControl;
           rosservice call /$UAV_NAME/mavros/cmd/arming 1;
+          sleep 2;
           rosservice call /$UAV_NAME/mavros/set_mode 0 offboard'
         # #}
         # #{ uav2
         - 'export UAV_NAME=uav2;
           waitForControl;
           rosservice call /$UAV_NAME/mavros/cmd/arming 1;
+          sleep 2;
           rosservice call /$UAV_NAME/mavros/set_mode 0 offboard'
         # #}
   - goto:
