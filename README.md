@@ -17,6 +17,14 @@ The suggested variant of OS installation is dual boot instead of virtualization 
 We use [Gitman](https://github.com/jacebrowning/gitman) to manage the repository **submodules**.
 The repository are supposed to be compiled by [catkin tools](https://catkin-tools.readthedocs.io).
 
+## Unmanned Aerial Vehicles
+
+| Model      | Spawn argument | Simulation                    |
+|------------|----------------|-------------------------------|
+| DJI f450   | `--f450`       | ![](.fig/f450_simulation.jpg) |
+| DJI f550   | `--f550`       | ![](.fig/f550_simulation.jpg) |
+| Tarot t650 | `--t650`       | ![](.fig/t650_simulation.jpg) |
+
 ## Examples of tmuxinator simulation sessions
 
 Selected tmuxinator scripts:
@@ -43,4 +51,3 @@ The `install.sh` script will add the following to your .bashrc:
 source /opt/ros/melodic/setup.bash
 source /usr/share/gazebo/setup.sh
 ```
-
