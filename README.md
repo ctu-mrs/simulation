@@ -34,13 +34,7 @@ For detail description of script capabilities for spawning vehicles see [mrs_sim
 
 ## Installing simulation
 
-The recommended way is to install the whole [MRS UAV system](https://github.com/ctu-mrs/mrs_uav_system).
-However, if you prefer to install only the *simulation*, you can do the following:
-
-1. Clone this repository,
-2. place it into your *catkin workspace*,
-3. call ```installation/install.sh``` to install the dependencies,
-4. build your workspace.
+Install the whole [MRS UAV system](https://github.com/ctu-mrs/mrs_uav_system).
 
 ## Finishing your .bashrc
 
