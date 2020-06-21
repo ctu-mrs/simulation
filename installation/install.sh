@@ -11,6 +11,10 @@ set -e
 trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "$0: \"${last_command}\" command failed with exit code $?"' ERR
 
+distro=`lsb_release -r | awk '{ print $2 }'`
+[ "$distro" = "18.04" ] && ROS_DISTRO="melodic"
+[ "$distro" = "20.04" ] && ROS_DISTRO="noetic"
+
 ## | ----------- go to the directory of this script ----------- |
 
 cd "$MY_PATH"
@@ -38,11 +42,12 @@ gitman install --force
 ## | ---------------- install px4 dependencies ---------------- |
 
 $MY_PATH/../ros_packages/px4_firmware/Tools/setup/ubuntu.sh --no-nuttx --no-sim-tool
-sudo apt -y upgrade 'libignition-fuel-*' # this was needed after the first installation to fix the libignition-fuel-...
+
+[ "$distro" = "18.04" ] && sudo apt -y upgrade 'libignition-fuel-*' # this was needed after the first installation to fix the libignition-fuel-...
 
 ## | --------------- add ROS sourcing to .bashrc -------------- |
 
-line="source /opt/ros/melodic/setup.bash"
+line="source /opt/ros/$ROS_DISTRO/setup.bash"
 
 num=`cat ~/.bashrc | grep "$line" | wc -l`
 if [ "$num" -lt "1" ]; then
