@@ -5,7 +5,7 @@ sources:
     repo: https://github.com/ctu-mrs/mrs_gazebo_common_resources.git
     sparse_paths:
       -
-    rev: 99f4b70b2b3d547a56094ad4c32c0f7c49ed5e89
+    rev: master
     link: ros_packages/mrs_gazebo_common_resources
     scripts:
       - git submodule update --init --recursive --depth 1
@@ -14,16 +14,62 @@ sources:
     repo: https://github.com/ctu-mrs/mrs_simulation.git
     sparse_paths:
       -
-    rev: 1e1c5bc9691d48e1385d2a2f3d616902fd3b11ba
+    rev: master
     link: ros_packages/mrs_simulation
     scripts:
       - git submodule update --init --recursive --depth 1
+  # - name: px4_firmware
+  #   type: git
+  #   repo: https://github.com/ctu-mrs/px4_firmware.git
+  #   sparse_paths:
+  #     -
+  #   rev: v1.10.1
+  #   link: ros_packages/px4_firmware
+  #   scripts:
+  #     - git submodule update --init --recursive --depth 1
   - name: px4_firmware
     type: git
     repo: https://github.com/PX4/Firmware.git
     sparse_paths:
       -
-    rev: 13d983d30506c5d4ad66888438246b00ca05ec97
+    rev: v1.11.0-beta1
+    link: ros_packages/px4_firmware
+    scripts:
+      - git submodule update --init --recursive --depth 1
+sources_locked:
+  - name: mrs_gazebo_common_resources
+    type: git
+    repo: https://github.com/ctu-mrs/mrs_gazebo_common_resources.git
+    sparse_paths:
+      -
+    rev: 6f709769b017817d9202daca1ff71987e0b64bd6
+    link: ros_packages/mrs_gazebo_common_resources
+    scripts:
+      - git submodule update --init --recursive --depth 1
+  - name: mrs_simulation
+    type: git
+    repo: https://github.com/ctu-mrs/mrs_simulation.git
+    sparse_paths:
+      -
+    rev: 15f0bdc28b1dcf320eca36490a128f753b2af3d1
+    link: ros_packages/mrs_simulation
+    scripts:
+      - git submodule update --init --recursive --depth 1
+  # - name: px4_firmware
+  #   type: git
+  #   repo: https://github.com/ctu-mrs/px4_firmware.git
+  #   sparse_paths:
+  #     -
+  #   rev: 7c132941e05968b2d8170d0f16d6410bc8ae84f6
+  #   link: ros_packages/px4_firmware
+  #   scripts:
+  #     - git submodule update --init --recursive --depth 1
+  - name: px4_firmware
+    type: git
+    repo: https://github.com/PX4/Firmware.git
+    sparse_paths:
+      -
+    rev: 746b3124abe9df486c6d88a3d9ec0c438e63654d
     link: ros_packages/px4_firmware
     scripts:
       - git submodule update --init --recursive --depth 1
