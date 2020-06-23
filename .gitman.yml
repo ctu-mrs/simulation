@@ -5,34 +5,6 @@ sources:
     repo: https://github.com/ctu-mrs/mrs_gazebo_common_resources.git
     sparse_paths:
       -
-    rev: master
-    link: ros_packages/mrs_gazebo_common_resources
-    scripts:
-      - git submodule update --init --recursive --depth 1
-  - name: mrs_simulation
-    type: git
-    repo: https://github.com/ctu-mrs/mrs_simulation.git
-    sparse_paths:
-      -
-    rev: master
-    link: ros_packages/mrs_simulation
-    scripts:
-      - git submodule update --init --recursive --depth 1
-  - name: px4_firmware
-    type: git
-    repo: https://github.com/PX4/Firmware.git
-    sparse_paths:
-      -
-    rev: pr-update_mavlink/include/mavlink/v2.0
-    link: ros_packages/px4_firmware
-    scripts:
-      - git submodule update --init --recursive --depth 1
-sources_locked:
-  - name: mrs_gazebo_common_resources
-    type: git
-    repo: https://github.com/ctu-mrs/mrs_gazebo_common_resources.git
-    sparse_paths:
-      -
     rev: 99f4b70b2b3d547a56094ad4c32c0f7c49ed5e89
     link: ros_packages/mrs_gazebo_common_resources
     scripts:
