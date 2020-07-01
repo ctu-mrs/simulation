@@ -1,0 +1,21 @@
+mpc_parameters:
+
+  horizontal:
+
+    Q: [500, 100, 100] # state error penalization
+    S: [1000, 300, 300] # last state error penalization
+
+    # this enforces the main constrints
+    # the resulting constraints for trackers are halves of these number
+    max_speed: 4.0
+    max_acceleration: 2.0
+    max_jerk: 5.0
+
+  vertical:
+
+    Q: [100, 10, 10] # state error penalization
+    S: [100, 10, 10] # last state error penalization
+
+    max_speed: 4.0
+    max_acceleration: 2.0
+    max_u: 50.0
