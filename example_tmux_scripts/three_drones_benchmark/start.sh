@@ -1,14 +1,10 @@
 #!/bin/bash
 
-if_is_link=`readlink $0`
-command_name=$0
-if [[ if_is_link ]]; then
-  command_name=$if_is_link
-fi
-
-MY_PATH=`dirname "$if_is_link"`
-MY_PATH=`( cd "$MY_PATH" && pwd )`
-cd $MY_PATH
+# Absolute path to this script. /home/user/bin/foo.sh
+SCRIPT=$(readlink -f $0)
+# Absolute path this script is in. /home/user/bin
+SCRIPTPATH=`dirname $SCRIPT`
+cd "$SCRIPTPATH"
 
 # remove the old link
 rm .tmuxinator.yml
