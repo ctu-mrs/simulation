@@ -43,7 +43,7 @@ gitman install --force
 
 $MY_PATH/../ros_packages/px4_firmware/Tools/setup/ubuntu.sh --no-nuttx --no-sim-tool
 
-[ "$distro" = "18.04" ] && sudo apt -y upgrade 'libignition-fuel-*' # this was needed after the first installation to fix the libignition-fuel-...
+[ "$distro" = "18.04" ] && sudo apt-get -y upgrade 'libignition-fuel-*' # this was needed after the first installation to fix the libignition-fuel-...
 
 ## | --------------- add ROS sourcing to .bashrc -------------- |
 
