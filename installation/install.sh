@@ -43,10 +43,9 @@ gitman install --force
 
 $MY_PATH/../ros_packages/px4_firmware/Tools/setup/ubuntu.sh --no-nuttx --no-sim-tool
 
-sudo apt install python-lxml
 # fix for correct working of python libraries
 sudo chown -R "$USER":"$USER" ~/.local/lib
-pip3 install -user packaging
+pip3 install --user packaging
 
 [ "$distro" = "18.04" ] && sudo apt-get -y upgrade 'libignition-fuel-*' # this was needed after the first installation to fix the libignition-fuel-...
 
