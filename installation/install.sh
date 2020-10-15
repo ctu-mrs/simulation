@@ -44,8 +44,8 @@ gitman install --force
 $MY_PATH/../ros_packages/px4_firmware/Tools/setup/ubuntu.sh --no-nuttx --no-sim-tool
 
 if [ "$distro" = "18.04" ]; then
-  sudo -H pip install --user packaging
-  sudo apt -y install python-packaging
+  sudo -H pip install --user packaging toml
+  sudo apt -y install python-packaging python-toml
 elif [ "$distro" = "20.04" ]; then
   sudo -H pip3 install --user packaging
   sudo apt -y install python3-packaging
@@ -54,6 +54,8 @@ else
   exit 1
 fi
 
+sudo apt -y install python3-toml
+sudo -H pip3 install --user toml
 
 [ "$distro" = "18.04" ] && sudo apt-get -y upgrade 'libignition-fuel-*' # this was needed after the first installation to fix the libignition-fuel-...
 
