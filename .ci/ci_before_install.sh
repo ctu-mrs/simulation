@@ -30,7 +30,7 @@ echo "installing uav_core"
 cd
 git clone https://github.com/ctu-mrs/uav_core
 cd uav_core
-git checkout new_firmware
+git checkout master
 ./installation/install.sh
 
 echo "installing simulation"
