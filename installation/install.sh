@@ -43,12 +43,11 @@ gitman install --force
 
 $MY_PATH/../ros_packages/px4_firmware/Tools/setup/ubuntu.sh --no-nuttx --no-sim-tool
 
-# fix for correct working of python libraries
-sudo chown -R "$USER":"$USER" ~/.local/lib
 if [ "$distro" = "18.04" ]; then 
-  pip install --user packaging
+  sudo -H pip install --user packaging
+  sudo apt -y install python-packaging
 elif [ "$distro" = "20.04" ]; then
-  pip3 install --user packaging
+  sudo -H pip3 install --user packaging
 else
   echo -e "\e[31mThis version of Ubuntu (${distro}) is untested. Modify this script accordingly.\e[0m"
   exit 1
