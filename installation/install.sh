@@ -45,7 +45,15 @@ $MY_PATH/../ros_packages/px4_firmware/Tools/setup/ubuntu.sh --no-nuttx --no-sim-
 
 # fix for correct working of python libraries
 sudo chown -R "$USER":"$USER" ~/.local/lib
-pip3 install --user packaging
+if [ "$distro" = "18.04" ]; then 
+  pip install --user packaging
+elif [ "$distro" = "20.04" ]; then
+  pip3 install --user packaging
+else
+  echo -e "\e[31mThis version of Ubuntu (${distro}) is untested. Modify this script accordingly.\e[0m"
+  exit 1
+fi
+
 
 [ "$distro" = "18.04" ] && sudo apt-get -y upgrade 'libignition-fuel-*' # this was needed after the first installation to fix the libignition-fuel-...
 
