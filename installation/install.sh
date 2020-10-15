@@ -57,6 +57,8 @@ fi
 
 [ "$distro" = "18.04" ] && sudo apt-get -y upgrade 'libignition-fuel-*' # this was needed after the first installation to fix the libignition-fuel-...
 
+sudo apt-get -y install 'libgstreamer1-dev' # needed for sitl_gazebo
+
 ## | --------------- add ROS sourcing to .bashrc -------------- |
 
 line="source /opt/ros/$ROS_DISTRO/setup.bash"
