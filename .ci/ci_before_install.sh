@@ -30,14 +30,12 @@ echo "installing uav_core"
 cd
 git clone https://github.com/ctu-mrs/uav_core
 cd uav_core
-git checkout new_firmware
 ./installation/install.sh
 
 echo "installing simulation"
 cd
 git clone https://github.com/ctu-mrs/simulation
 cd simulation
-git checkout new_firmware
 ./installation/install.sh
 
 echo "creating workspace"
