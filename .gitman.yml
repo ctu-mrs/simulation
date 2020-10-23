@@ -55,4 +55,3 @@ sources_locked:
   link: ros_packages/px4_firmware
   scripts:
   - git submodule update --init --recursive --depth 1
-groups: []
