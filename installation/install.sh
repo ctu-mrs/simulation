@@ -41,6 +41,8 @@ gitman install --force
 
 ## | ---------------- install px4 dependencies ---------------- |
 
+sudo chown $USER /home/$USER/.local/lib -R
+
 $MY_PATH/../ros_packages/px4_firmware/Tools/setup/ubuntu.sh --no-nuttx --no-sim-tool
 
 if [ "$distro" = "18.04" ]; then
