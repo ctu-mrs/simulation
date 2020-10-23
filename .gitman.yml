@@ -51,7 +51,7 @@ sources_locked:
   repo: https://github.com/ctu-mrs/px4_firmware.git
   sparse_paths:
   -
-  rev: 5900b43b51f92b2a4cc223cf0f25f4610ec7e481
+  rev: 99288ea99d212ebcb499e1469b9d158cb35a534a
   link: ros_packages/px4_firmware
   scripts:
   - git submodule update --init --recursive --depth 1
