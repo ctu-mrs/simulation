@@ -41,7 +41,9 @@ gitman install --force
 
 ## | ---------------- install px4 dependencies ---------------- |
 
-sudo chown $USER /home/$USER/.local/lib -R
+if [ -e /home/$USER/.local/lib ]; then
+  sudo chown $USER /home/$USER/.local/lib -R
+fi
 
 $MY_PATH/../ros_packages/px4_firmware/Tools/setup/ubuntu.sh --no-nuttx --no-sim-tool
 
