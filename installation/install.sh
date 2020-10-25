@@ -66,17 +66,7 @@ sudo -H pip3 install --user toml
 sudo apt-get -y install 'libgstreamer1.0-dev' # needed for sitl_gazebo
 
 sudo apt-get -y install \
-  libignition-physics-dev \
-  libignition-cmake2-dev \
-  libignition-common3-dev \
-  libignition-common3-graphics-dev \
-  libignition-math6-dev \
-  libignition-math6-eigen3-dev \
-  libignition-plugin-dev \
-  libdart6-dev \
-  libdart6-collision-ode-dev \
-  libdart6-utils-urdf-dev \
-  libsdformat8-dev
+  libignition-common3-graphics-dev
 
 ## | --------------- add ROS sourcing to .bashrc -------------- |
 
