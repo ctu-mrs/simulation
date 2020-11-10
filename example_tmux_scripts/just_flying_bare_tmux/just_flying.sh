@@ -20,7 +20,7 @@ PROJECT_NAME=just_flying
 MAIN_DIR=~/"bag_files"
 
 # following commands will be executed first, in each window
-pre_input="export UAV_NAME=uav1; export RUN_TYPE=simulation; export UAV_TYPE=f550; export WORLD_NAME=simulation"
+pre_input="export UAV_NAME=uav1; export RUN_TYPE=simulation; export UAV_TYPE=f550; export WORLD_NAME=simulation; export SENSORS='garmin_down'"
 
 # define commands
 # 'name' 'command'
