@@ -23,7 +23,7 @@ sources:
   repo: https://github.com/ctu-mrs/px4_firmware.git
   sparse_paths:
   -
-  rev: v1.11.2
+  rev: v1.10.1
   link: ros_packages/px4_firmware
   scripts:
   - git submodule update --init --recursive --depth 1
@@ -42,7 +42,7 @@ sources_locked:
   repo: https://github.com/ctu-mrs/mrs_simulation.git
   sparse_paths:
   -
-  rev: 7c7ed2dc248ea1f8dfd7fa60269823cffc04b9bc
+  rev: 71253fde98c2b74ee393db9424022eccbbf20468
   link: ros_packages/mrs_simulation
   scripts:
   - git submodule update --init --recursive --depth 1
@@ -51,7 +51,7 @@ sources_locked:
   repo: https://github.com/ctu-mrs/px4_firmware.git
   sparse_paths:
   -
-  rev: a04f142feb15b701a911a1a88608c5937b48d61f
+  rev: 69ec5b58e5761a394783e46b6e2759de99aa7ba7
   link: ros_packages/px4_firmware
   scripts:
   - git submodule update --init --recursive --depth 1
