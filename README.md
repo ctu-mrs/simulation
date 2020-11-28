@@ -7,7 +7,7 @@
 |---------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [mrs_simulation](https://github.com/ctu-mrs/mrs_simulation)                           | [![Build Status](https://github.com/ctu-mrs/mrs_simulation/workflows/CI/badge.svg)](https://github.com/ctu-mrs/mrs_simulation/actions)                           |
 | [mrs_gazebo_common_resources](https://github.com/ctu-mrs/mrs_gazebo_common_resources) | [![Build Status](https://github.com/ctu-mrs/mrs_gazebo_common_resources/workflows/CI/badge.svg)](https://github.com/ctu-mrs/mrs_gazebo_common_resources/actions) |
-| [px4](https://github.com/ctu-mrs/px4_firmware)                                        | [![Build Status](https://github.com/ctu-mrs/px4_firmware/workflows/CI/badge.svg)](https://github.com/ctu-mrs/simulatirewarmoif_4xpn                              |
+| [px4](https://github.com/ctu-mrs/px4_firmware)                                        | [![Build Status](https://github.com/ctu-mrs/px4_firmware/workflows/CI/badge.svg)](https://github.com/ctu-mrs/px4_firmware/actions)                               |
 | [mavlink_sitl_gazebo](https://github.com/ctu-mrs/px4_sitl_gazebo)                     |                                                                                                                                                                  |
 
 ## System requirements
