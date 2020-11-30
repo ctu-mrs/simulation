@@ -1,6 +1,9 @@
 # MRS Gazebo Simulation
 ![](.fig/thumbnail.jpg)
 
+| Simulation build status | [![Build Status](https://github.com/ctu-mrs/simulation/workflows/Melodic/badge.svg)](https://github.com/ctu-mrs/simulation/actions) | [![Build Status](https://github.com/ctu-mrs/simulation/workflows/Noetic/badge.svg)](https://github.com/ctu-mrs/simulation/actions) |
+|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+
 ## Submodules
 
 | ROS Package                                                                           | 18.04                                                                                                                                                                 | 20.04                                                                                                                                                                |
