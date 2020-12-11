@@ -61,6 +61,9 @@ fi
 sudo apt -y install python3-toml
 sudo -H pip3 install --user toml
 
+# needed for the UAV spawner
+sudo -H pip3 install --user defusedxml
+
 [ "$distro" = "18.04" ] && sudo apt-get -y upgrade 'libignition-fuel-*' # this was needed after the first installation to fix the libignition-fuel-...
 
 sudo apt-get -y install 'libgstreamer1.0-dev' # needed for sitl_gazebo
