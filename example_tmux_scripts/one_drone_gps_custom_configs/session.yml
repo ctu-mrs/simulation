@@ -18,7 +18,7 @@ windows:
   - spawn:
       layout: tiled
       panes:
-        - waitForSimulation; spawn_uav 1 --$UAV_TYPE --run --delete --enable-rangefinder --enable-ground-truth --file pos.yaml
+        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "1 $UAV_TYPE --enable-rangefinder --pos_file `pwd`/pos.yaml"
   - control:
       layout: tiled
       panes:

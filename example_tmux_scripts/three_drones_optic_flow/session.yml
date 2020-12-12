@@ -20,9 +20,9 @@ windows:
   - spawn:
       layout: tiled
       panes:
-        - waitForSimulation; spawn_uav 1 --$UAV_TYPE --run --delete --enable-rangefinder --enable-bluefox-camera
-        - waitForSimulation; spawn_uav 2 --$UAV_TYPE --run --delete --enable-rangefinder --enable-bluefox-camera
-        - waitForSimulation; spawn_uav 3 --$UAV_TYPE --run --delete --enable-rangefinder --enable-bluefox-camera
+        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "1 $UAV_TYPE --enable-rangefinder --enable-bluefox-camera"
+        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "2 $UAV_TYPE --enable-rangefinder --enable-bluefox-camera"
+        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "3 $UAV_TYPE --enable-rangefinder --enable-bluefox-camera"
   - optic_flow:
       layout: tiled
       panes:

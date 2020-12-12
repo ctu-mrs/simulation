@@ -19,7 +19,7 @@ windows:
   - spawn:
       layout: tiled
       panes:
-        - waitForSimulation; spawn_uav --file pos.yaml --$UAV_TYPE --run --delete --enable-rangefinder --enable-rplidar --enable-bluefox-camera
+        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "1 $UAV_TYPE --enable-rangefinder --enable-rplidar --enable-bluefox-camera"
   - hector_slam:
       layout: tiled
       panes:
