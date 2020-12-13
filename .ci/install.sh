@@ -33,6 +33,7 @@ echo "installing simulation"
 cd
 git clone https://github.com/ctu-mrs/simulation
 cd simulation
+git checkout "$GITHUB_SHA"
 ./installation/install.sh
 
 echo "creating workspace"
