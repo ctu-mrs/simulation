@@ -20,16 +20,7 @@ windows:
   - spawn:
       layout: tiled
       panes:
-        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "1 $UAV_TYPE --enable-rangefinder"
-        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "2 $UAV_TYPE --enable-rangefinder"
-        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "3 $UAV_TYPE --enable-rangefinder"
-        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "4 $UAV_TYPE --enable-rangefinder"
-        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "5 $UAV_TYPE --enable-rangefinder"
-        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "6 $UAV_TYPE --enable-rangefinder"
-        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "7 $UAV_TYPE --enable-rangefinder"
-        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "8 $UAV_TYPE --enable-rangefinder"
-        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "9 $UAV_TYPE --enable-rangefinder"
-        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "10 $UAV_TYPE --enable-rangefinder"
+        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "1 2 3 4 5 6 7 8 9 10 $UAV_TYPE --enable-rangefinder"
   - control:
       layout: tiled
       panes:
