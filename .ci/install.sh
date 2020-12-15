@@ -7,6 +7,9 @@ distro=`lsb_release -r | awk '{ print $2 }'`
 
 echo "Starting install" 
 
+# get the current commit SHA
+SHA=`git rev-parse HEAD`
+
 sudo apt-get -y update -qq
 sudo apt-mark hold openssh-server
 
@@ -33,7 +36,7 @@ echo "installing simulation"
 cd
 git clone https://github.com/ctu-mrs/simulation
 cd simulation
-git checkout "$GITHUB_SHA"
+git checkout "$SHA"
 ./installation/install.sh
 
 echo "creating workspace"
