@@ -9,6 +9,9 @@ echo "Starting install"
 
 # get the current commit SHA
 SHA=`git rev-parse HEAD`
+git log
+
+exit 2
 
 sudo apt-get -y update -qq
 sudo apt-mark hold openssh-server
