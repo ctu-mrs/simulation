@@ -8,7 +8,7 @@ distro=`lsb_release -r | awk '{ print $2 }'`
 # get the path to this script
 MY_PATH=`pwd`
 
-echo "Starting install" 
+echo "Starting install"
 
 sudo apt-get -y update -qq
 sudo apt-mark hold openssh-server
