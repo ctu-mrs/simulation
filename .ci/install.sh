@@ -6,8 +6,7 @@ distro=`lsb_release -r | awk '{ print $2 }'`
 [ "$distro" = "20.04" ] && ROS_DISTRO="noetic"
 
 # get the path to this script
-MY_PATH=`dirname "$0"`
-MY_PATH=`( cd "$MY_PATH" && pwd )`
+MY_PATH=`pwd`
 
 echo "Starting install" 
 
