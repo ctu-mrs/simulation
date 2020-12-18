@@ -30,7 +30,10 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
 
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # fetch the whole history
 
       - name: Install
         run: ./.ci/install.sh
