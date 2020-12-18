@@ -5,13 +5,11 @@ distro=`lsb_release -r | awk '{ print $2 }'`
 [ "$distro" = "18.04" ] && ROS_DISTRO="melodic"
 [ "$distro" = "20.04" ] && ROS_DISTRO="noetic"
 
+# get the path to this script
+MY_PATH=`dirname "$0"`
+MY_PATH=`( cd "$MY_PATH" && pwd )`
+
 echo "Starting install" 
-
-# get the current commit SHA
-SHA=`git rev-parse HEAD`
-git log
-
-exit 2
 
 sudo apt-get -y update -qq
 sudo apt-mark hold openssh-server
@@ -36,16 +34,14 @@ cd uav_core
 ./installation/install.sh
 
 echo "installing simulation"
-cd
-git clone https://github.com/ctu-mrs/simulation
-cd simulation
-git checkout "$SHA"
+cd "$MY_PATH"
+gitman install
 ./installation/install.sh
 
 echo "creating workspace"
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
-ln -s ~/simulation
+ln -s "$MY_PATH" simulation
 source /opt/ros/$ROS_DISTRO/setup.bash
 cd ~/catkin_ws
 catkin init
