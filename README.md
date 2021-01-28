@@ -15,18 +15,20 @@
 
 ## System requirements
 
-Required OS is Ubuntu 18.04 LTS 64-bit or its flavors that can install ROS Melodic.
+Required OS is Ubuntu 20.04 LTS 64-bit (Ubuntu 18.04 LTS 64-bit) or its flavors that can install ROS Noetic (ROS Melodic).
 The suggested variant of OS installation is dual boot instead of virtualization that can be slow and can not handle well the simulation GUI.
 We use [Gitman](https://github.com/jacebrowning/gitman) to manage the repository **submodules**.
 The repository are supposed to be compiled by [catkin tools](https://catkin-tools.readthedocs.io).
 
 ## Unmanned Aerial Vehicles
 
-| Model      | Spawn argument | Simulation                    |
-|------------|----------------|-------------------------------|
-| DJI f450   | `--f450`       | ![](.fig/f450_simulation.jpg) |
-| DJI f550   | `--f550`       | ![](.fig/f550_simulation.jpg) |
-| Tarot t650 | `--t650`       | ![](.fig/t650_simulation.jpg) |
+| Model        | Spawn argument | Simulation                    |
+|--------------|----------------|-------------------------------|
+| DJI f330     | `--f330`       | ![](.fig/f330_simulation.jpg) |
+| DJI f450     | `--f450`       | ![](.fig/f450_simulation.jpg) |
+| Holybro x500 | `--x500`       | ![](.fig/x500_simulation.jpg) |
+| DJI f550     | `--f550`       | ![](.fig/f550_simulation.jpg) |
+| Tarot t650   | `--t650`       | ![](.fig/t650_simulation.jpg) |
 
 ## Examples of tmuxinator simulation sessions
 
@@ -51,6 +53,6 @@ Install the whole [MRS UAV system](https://github.com/ctu-mrs/mrs_uav_system).
 
 The `install.sh` script will add the following to your .bashrc:
 ```bash
-source /opt/ros/melodic/setup.bash
+source /opt/ros/<ros_version>/setup.bash
 source /usr/share/gazebo/setup.sh
 ```
