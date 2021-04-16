@@ -28,6 +28,9 @@ sudo apt-get -y update
 [ "$distro" = "18.04" ] && sudo apt-get -y install ros-melodic-desktop-full
 [ "$distro" = "20.04" ] && sudo apt-get -y install ros-noetic-desktop-full
 
+#hotfix for missing library in ubuntu 18.04 for mavlink_sitl_gazebo
+[ "$distro" = "18.04" ] && sudo apt-get -y install libignition-math2
+
 num=`cat ~/.bashrc | grep "/opt/ros/$ROS_DISTRO/setup.bash" | wc -l`
 if [ "$num" -lt "1" ]; then
 
