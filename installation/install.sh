@@ -47,11 +47,15 @@ fi
 
 $MY_PATH/../ros_packages/px4_firmware/Tools/setup/ubuntu.sh --no-nuttx --no-sim-tool
 
+sudo apt update
+
 if [ "$distro" = "18.04" ]; then
   sudo -H pip install --user packaging toml
   sudo apt -y install python-packaging python-toml
 
   #hotfix for missing library in ubuntu 18.04 for mavlink_sitl_gazebo
+  sudo apt update --fix-missing
+  sudo apt -y install -f
   sudo apt -y install libignition-math4
   sudo apt -y upgrade libignition-math4
 
