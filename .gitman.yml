@@ -42,7 +42,7 @@ sources_locked:
     repo: https://github.com/ctu-mrs/mrs_simulation.git
     sparse_paths:
       -
-    rev: d1bdeb45bc65969dcb4512c6f9836aa28705681b
+    rev: df837fb3fc804eb1b76c0a255de681f579ce72a1
     link: ros_packages/mrs_simulation
     scripts:
       - git submodule update --init --recursive --depth 1
