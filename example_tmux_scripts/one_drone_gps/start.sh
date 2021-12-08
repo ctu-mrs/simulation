@@ -13,4 +13,4 @@ rm .tmuxinator.yml
 ln session.yml .tmuxinator.yml
 
 # start tmuxinator
-tmuxinator
+tmuxinator random=35

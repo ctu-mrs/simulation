@@ -1,7 +1,11 @@
 name: simulation
 root: ./
+
+on_project_start: nums=$(shuf -i 1-30 -n 30 | tr '\n' " "); echo "UAV_NUMBERS=($nums)" > /tmp/random_uav_numbers;
+
+pre_window: nums=$(cat /tmp/random_uav_numbers); eval $nums; export UAV_NAME="uav${UAV_NUMBERS[1]}"; echo $UAV_NAME; export RUN_TYPE=simulation; export UAV_TYPE=t650; export WORLD_NAME=simulation; export SENSORS="garmin_down"
+
 startup_window: status
-pre_window: export UAV_NAME=uav1; export RUN_TYPE=simulation; export UAV_TYPE=t650; export WORLD_NAME=simulation; export SENSORS="garmin_down"
 windows:
   - roscore:
       layout: tiled
@@ -11,7 +15,7 @@ windows:
       layout: tiled
       panes:
         - waitForRos; roslaunch mrs_simulation simulation.launch world_name:=grass_plane gui:=true
-        - waitForOdometry; gz camera -c gzclient_camera -f uav1; history -s gz camera -c gzclient_camera -f uav1
+        - waitForOdometry; gz camera -c gzclient_camera -f ${UAV_NAME}; history -s gz camera -c gzclient_camera -f ${UAV_NAME}
   - status:
       layout: tiled
       panes:
@@ -19,7 +23,7 @@ windows:
   - spawn:
       layout: tiled
       panes:
-        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "1 $UAV_TYPE --enable-rangefinder"
+        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "${UAV_NUMBERS[1]} $UAV_TYPE --enable-rangefinder"
   - control:
       layout: tiled
       panes:

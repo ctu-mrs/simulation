@@ -1,70 +1,58 @@
 location: .gitman
 sources:
-  - repo: https://github.com/ctu-mrs/mrs_gazebo_common_resources.git
-    name: mrs_gazebo_common_resources
-    rev: master
+  - name: mrs_gazebo_common_resources
     type: git
+    repo: https://github.com/ctu-mrs/mrs_gazebo_common_resources.git
     sparse_paths:
       -
-    links:
-      - source: ''
-        target: ros_packages/mrs_gazebo_common_resources
+    rev: master
+    link:
     scripts:
       - git submodule update --init --recursive --depth 1
-  - repo: https://github.com/ctu-mrs/mrs_simulation.git
-    name: mrs_simulation
-    rev: master
+  - name: mrs_simulation
     type: git
+    repo: https://github.com/ctu-mrs/mrs_simulation.git
     sparse_paths:
       -
-    links:
-      - source: ''
-        target: ros_packages/mrs_simulation
+    rev: master
+    link:
     scripts:
       - git submodule update --init --recursive --depth 1
-  - repo: https://github.com/ctu-mrs/px4_firmware.git
-    name: px4_firmware
+  - name: px4_firmware
+    type: git
+    repo: https://github.com/ctu-mrs/px4_firmware.git
+    sparse_paths:
+      -
     rev: 1.11.2
-    type: git
-    sparse_paths:
-      -
-    links:
-      - source: ''
-        target: ros_packages/px4_firmware
+    link:
     scripts:
       - git submodule update --init --recursive --depth 1
 sources_locked:
-  - repo: https://github.com/ctu-mrs/mrs_gazebo_common_resources.git
-    name: mrs_gazebo_common_resources
+  - name: mrs_gazebo_common_resources
+    type: git
+    repo: https://github.com/ctu-mrs/mrs_gazebo_common_resources.git
+    sparse_paths:
+      -
     rev: 9047f7aa0e567b382a5316f77179cb8d0dfbaceb
-    type: git
-    sparse_paths:
-      -
-    links:
-      - source: ''
-        target: ros_packages/mrs_gazebo_common_resources
+    link:
     scripts:
       - git submodule update --init --recursive --depth 1
-  - repo: https://github.com/ctu-mrs/mrs_simulation.git
-    name: mrs_simulation
-    rev: 662a82b9c37a70eefb886a7a2d95a993defbdf5e
+  - name: mrs_simulation
     type: git
+    repo: https://github.com/ctu-mrs/mrs_simulation.git
     sparse_paths:
       -
-    links:
-      - source: ''
-        target: ros_packages/mrs_simulation
+    rev: 88fbf9ad20359b687df95df4e22b7ff3d31f91dd
+    link:
     scripts:
       - git submodule update --init --recursive --depth 1
-  - repo: https://github.com/ctu-mrs/px4_firmware.git
-    name: px4_firmware
+  - name: px4_firmware
+    type: git
+    repo: https://github.com/ctu-mrs/px4_firmware.git
+    sparse_paths:
+      -
     rev: a50b6c262d86c3259e7d4ba36b29e47a7276964e
-    type: git
-    sparse_paths:
-      -
-    links:
-      - source: ''
-        target: ros_packages/px4_firmware
+    link:
     scripts:
       - git submodule update --init --recursive --depth 1
 default_group: ''
