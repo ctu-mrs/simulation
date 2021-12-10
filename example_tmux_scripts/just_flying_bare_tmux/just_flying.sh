@@ -19,8 +19,10 @@ PROJECT_NAME=just_flying
 # do not change this
 MAIN_DIR=~/"bag_files"
 
+export UAV_NUMBER=$(shuf -i 1-30 -n 1);
+
 # following commands will be executed first, in each window
-pre_input="export UAV_NUMBER="$(shuf -i 1-99 -n 1)"; export UAV_NAME="$UAV_NUMBER"; export RUN_TYPE=simulation; export UAV_TYPE=f550; export WORLD_NAME=simulation; export SENSORS='garmin_down'"
+pre_input="export UAV_NAME="uav${UAV_NUMBER}"; export UAV_NUMBER=$UAV_NUMBER export RUN_TYPE=simulation; export UAV_TYPE=f550; export WORLD_NAME=simulation; export SENSORS='garmin_down'"
 
 # define commands
 # 'name' 'command'
