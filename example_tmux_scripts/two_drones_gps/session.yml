@@ -1,7 +1,8 @@
 name: simulation
 root: ./
+on_project_start: nums=$(shuf -i 1-30 -n 30 | tr '\n' " "); echo "UAV_NUMBERS=($nums)" > /tmp/random_uav_numbers
+pre_window: source /tmp/random_uav_numbers; export UAV_NAME="uav${UAV_NUMBERS[1]}"; export RUN_TYPE=simulation; export UAV_TYPE=t650; export WORLD_NAME=simulation; export SENSORS="garmin_down"
 startup_window: status
-pre_window: export UAV_NAME=uav1; export RUN_TYPE=simulation; export UAV_TYPE=t650; export WORLD_NAME=simulation; export SENSORS="garmin_down"
 windows:
   - roscore:
       layout: tiled
@@ -14,34 +15,34 @@ windows:
   - status:
       layout: tiled
       panes:
-        - export UAV_NAME=uav1; waitForSimulation; roslaunch mrs_uav_status status.launch
-        - export UAV_NAME=uav2; waitForSimulation; roslaunch mrs_uav_status status.launch
+        - export UAV_NAME="uav${UAV_NUMBERS[1]}"; waitForSimulation; roslaunch mrs_uav_status status.launch
+        - export UAV_NAME="uav${UAV_NUMBERS[2]}"; waitForSimulation; roslaunch mrs_uav_status status.launch
   - spawn:
       layout: tiled
       panes:
-        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "1 2 $UAV_TYPE --enable-rangefinder"
+        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "${UAV_NUMBERS[1]} ${UAV_NUMBERS[2]} $UAV_TYPE --enable-rangefinder"
   - control:
       layout: tiled
       panes:
-        - export UAV_NAME=uav1; waitForOdometry; roslaunch mrs_uav_general core.launch
-        - export UAV_NAME=uav2; waitForOdometry; roslaunch mrs_uav_general core.launch
+        - export UAV_NAME="uav${UAV_NUMBERS[1]}"; waitForOdometry; roslaunch mrs_uav_general core.launch
+        - export UAV_NAME="uav${UAV_NUMBERS[2]}"; waitForOdometry; roslaunch mrs_uav_general core.launch
   - automatic_start:
       layout: tiled
       panes:
-        - export UAV_NAME=uav1; waitForSimulation; roslaunch mrs_uav_general automatic_start.launch
-        - export UAV_NAME=uav2; waitForSimulation; roslaunch mrs_uav_general automatic_start.launch
+        - export UAV_NAME="uav${UAV_NUMBERS[1]}"; waitForSimulation; roslaunch mrs_uav_general automatic_start.launch
+        - export UAV_NAME="uav${UAV_NUMBERS[2]}"; waitForSimulation; roslaunch mrs_uav_general automatic_start.launch
   - takeoff:
       layout: tiled
       panes:
-        # #{ uav1
-        - 'export UAV_NAME=uav1;
+        # #{ "uav${UAV_NUMBERS[1]}"
+        - 'export UAV_NAME="uav${UAV_NUMBERS[1]}";
           waitForControl;
           rosservice call /$UAV_NAME/mavros/cmd/arming 1;
           sleep 2;
           rosservice call /$UAV_NAME/mavros/set_mode 0 offboard'
         # #}
-        # #{ uav2
-        - 'export UAV_NAME=uav2;
+        # #{ "uav${UAV_NUMBERS[2]}"
+        - 'export UAV_NAME="uav${UAV_NUMBERS[2]}";
           waitForControl;
           rosservice call /$UAV_NAME/mavros/cmd/arming 1;
           sleep 2;
@@ -51,13 +52,13 @@ windows:
       layout: tiled
       synchronize: after
       panes:
-        - 'export UAV_NAME=uav1;
+        - 'export UAV_NAME="uav${UAV_NUMBERS[1]}";
           history -s rosservice call /$UAV_NAME/control_manager/goto \"goal: \[10.0, 0.0, 3.0, 0.0\]\";
           history -s rosservice call /$UAV_NAME/control_manager/goto \"goal: \[-10.0, 0.0, 3.0, 0.0\]\"'
-        - 'export UAV_NAME=uav2;
+        - 'export UAV_NAME="uav${UAV_NUMBERS[2]}";
           history -s rosservice call /$UAV_NAME/control_manager/goto \"goal: \[-10.0, 0.0, 3.0, 0.0\]\";
           history -s rosservice call /$UAV_NAME/control_manager/goto \"goal: \[10.0, 0.0, 3.0, 0.0\]\"'
   - gazebo_camera_follow:
       layout: tiled
       panes:
-        - waitForOdometry; gz camera -c gzclient_camera -f uav1; history -s gz camera -c gzclient_camera -f uav1
+        - waitForOdometry; gz camera -c gzclient_camera -f "uav${UAV_NUMBERS[1]}"; history -s gz camera -c gzclient_camera -f "uav${UAV_NUMBERS[1]}"

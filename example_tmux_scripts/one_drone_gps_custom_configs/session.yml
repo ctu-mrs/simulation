@@ -38,7 +38,7 @@ windows:
   - gazebo_camera_follow:
       layout: tiled
       panes:
-        - waitForOdometry; gz camera -c gzclient_camera -f uav1; history -s gz camera -c gzclient_camera -f uav1
+        - waitForOdometry; gz camera -c gzclient_camera -f ${UAV_NAME}; history -s gz camera -c gzclient_camera -f ${UAV_NAME}
   - easy_control:
       layout: tiled
       panes:

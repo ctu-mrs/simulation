@@ -20,7 +20,7 @@ windows:
   - spawn:
       layout: tiled
       panes:
-        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "1 2 3 $UAV_TYPE --enable-rangefinder --enable-bluefox-camera --enable-rplidar"
+        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "1 2 3 $UAV_TYPE --enable-rangefinder --enable-bluefox-camera --enable-rplidar --pos_file `pwd`/pos.yaml"
   - optic_flow:
       layout: tiled
       panes:
