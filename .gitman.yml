@@ -36,7 +36,7 @@ sources:
 sources_locked:
   - repo: https://github.com/ctu-mrs/mrs_gazebo_common_resources.git
     name: mrs_gazebo_common_resources
-    rev: 8402e1b63c16b70a7427b62e81598fc92df92896
+    rev: 967ea431e91228bd54f51a099e2faddde64a8c97
     type: git
     sparse_paths:
       -
@@ -47,7 +47,7 @@ sources_locked:
       - git submodule update --init --recursive --depth 1
   - repo: https://github.com/ctu-mrs/mrs_simulation.git
     name: mrs_simulation
-    rev: 5b4203afd1351dcc3196f4ff5cc3bebfab36c1e5
+    rev: 60b30f955f6b215aac65cd80d7267c9a9f7b4864
     type: git
     sparse_paths:
       -
