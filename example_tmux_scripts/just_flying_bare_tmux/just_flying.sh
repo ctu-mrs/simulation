@@ -13,11 +13,17 @@ fi
 
 source $HOME/.bashrc
 
-# change this to your liking
+# location for storing the bag files
+# * do not change unless you know what you are doing
+MAIN_DIR=~/"bag_files"
+
+# the project name
+# * is used to define folder name in ~/$MAIN_DIR
 PROJECT_NAME=just_flying
 
-# do not change this
-MAIN_DIR=~/"bag_files"
+# the name of the TMUX session
+# * can be used for attaching as 'tmux a -t <session name>'
+SESSION_NAME=mav
 
 export UAV_NUMBER=$(shuf -i 1-30 -n 1);
 
@@ -26,28 +32,38 @@ pre_input="export UAV_NAME="uav${UAV_NUMBER}"; export UAV_NUMBER=$UAV_NUMBER exp
 
 # define commands
 # 'name' 'command'
-# DO NOT PUT spaces in the names
+# * DO NOT PUT SPACES IN THE NAMES
+# * "new line" after the command    => the command will be called after start
+# * NO "new line" after the command => the command will wait for user's <enter>
 input=(
-  'Roscore' "roscore
-"
   'Gazebo' "waitForRos; roslaunch mrs_simulation simulation.launch world_name:=grass_plane gui:=true
 "
   'Spawn' 'waitForSimulation; rosservice call /mrs_drone_spawner/spawn "$UAV_NUMBER $UAV_TYPE --enable-rangefinder"
 '
+  'Status' "waitForOdometry; roslaunch mrs_uav_status status.launch
+"
   'Control' "waitForOdometry; roslaunch mrs_uav_general core.launch config_uav_manager:=./custom_configs/uav_manager.yaml
 "
   'AutomaticStart' "waitForSimulation; roslaunch mrs_uav_general automatic_start.launch
 "
-  "PrepareUAV" "waitForControl; rosservice call /$UAV_NAME/mavros/cmd/arming 1; sleep 2; rosservice call /$UAV_NAME/mavros/set_mode 0 offboard
+  "ArmAndOffboard" "waitForControl; rosservice call /$UAV_NAME/mavros/cmd/arming 1; sleep 2; rosservice call /$UAV_NAME/mavros/set_mode 0 offboard
 "
-  'Camera_follow' "waitForOdometry; gz camera -c gzclient_camera -f $UAV_NAME"
   'GoTo' "rosservice call /$UAV_NAME/control_manager/goto \"goal: [15.0, 15.0, 2.0, 0.0]\""
   'GoToRelative' "rosservice call /$UAV_NAME/control_manager/goto_relative \"goal: [5.0, 5.0, 1.0, 3.14]\""
-  'gazebo_camera_follow' "waitForOdometry; gz camera -c gzclient_camera -f $UAV_NAME; history -s gz camera -c gzclient_camera -f $UAV_NAME
+  'rviz' "waitForOdometry; roslaunch mrs_uav_testing rviz.launch
 "
+  'gzcamera_follow' "waitForOdometry; gz camera -c gzclient_camera -f $UAV_NAME
+"
+  'Roscore' 'roscore
+'
 )
 
-init_window="Control"
+# the name of the window to focus after start
+init_window="Status"
+
+# automatically attach to the new session?
+# {true, false}, default true
+attach="true"
 
 ###########################
 ### DO NOT MODIFY BELOW ###
@@ -136,7 +152,9 @@ done
 # send commands
 for ((i=0; i < ${#cmds[*]}; i++));
 do
-  $TMUX_BIN send-keys -t $SESSION_NAME:$(($i+1)) "cd $SCRIPTPATH;${pre_input};${cmds[$i]}"
+  $TMUX_BIN send-keys -t $SESSION_NAME:$(($i+1)) "cd $SCRIPTPATH;
+${pre_input};
+${cmds[$i]}"
 done
 
 # identify the index of the init window
@@ -150,6 +168,10 @@ done
 
 $TMUX_BIN select-window -t $SESSION_NAME:$init_index
 
-$TMUX_BIN -2 attach-session -t $SESSION_NAME
-
-clear
+if [[ "$attach" == "true" ]]; then
+  $TMUX_BIN -2 attach-session -t $SESSION_NAME
+else
+  echo "The session was started"
+  echo "You can later attach by calling:"
+  echo "  tmux a -t $SESSION_NAME"
+fi
