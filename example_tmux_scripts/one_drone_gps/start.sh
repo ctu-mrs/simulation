@@ -8,3 +8,4 @@ cd "$SCRIPTPATH"
 
 # start tmuxinator
 tmuxinator start -p ./session.yml
+

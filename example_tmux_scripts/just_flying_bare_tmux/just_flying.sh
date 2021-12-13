@@ -25,9 +25,10 @@ PROJECT_NAME=just_flying
 # * can be used for attaching as 'tmux a -t <session name>'
 SESSION_NAME=mav
 
-# following commands will be executed first in each window
-# * do NOT put ; at the end
-pre_input="export UAV_NAME=uav1; export RUN_TYPE=simulation; export UAV_TYPE=f550; export WORLD_NAME=simulation; export SENSORS='garmin_down'"
+export UAV_NUMBER=$(shuf -i 1-30 -n 1);
+
+# following commands will be executed first, in each window
+pre_input="export UAV_NAME="uav${UAV_NUMBER}"; export UAV_NUMBER=$UAV_NUMBER export RUN_TYPE=simulation; export UAV_TYPE=f550; export WORLD_NAME=simulation; export SENSORS='garmin_down'"
 
 # define commands
 # 'name' 'command'
@@ -37,7 +38,7 @@ pre_input="export UAV_NAME=uav1; export RUN_TYPE=simulation; export UAV_TYPE=f55
 input=(
   'Gazebo' "waitForRos; roslaunch mrs_simulation simulation.launch world_name:=grass_plane gui:=true
 "
-  'Spawn' 'waitForSimulation; rosservice call /mrs_drone_spawner/spawn "1 $UAV_TYPE --enable-rangefinder"
+  'Spawn' 'waitForSimulation; rosservice call /mrs_drone_spawner/spawn "$UAV_NUMBER $UAV_TYPE --enable-rangefinder"
 '
   'Status' "waitForOdometry; roslaunch mrs_uav_status status.launch
 "
@@ -151,7 +152,9 @@ done
 # send commands
 for ((i=0; i < ${#cmds[*]}; i++));
 do
-  $TMUX_BIN send-keys -t $SESSION_NAME:$(($i+1)) "cd $SCRIPTPATH;${pre_input};${cmds[$i]}"
+  $TMUX_BIN send-keys -t $SESSION_NAME:$(($i+1)) "cd $SCRIPTPATH;
+${pre_input};
+${cmds[$i]}"
 done
 
 # identify the index of the init window
