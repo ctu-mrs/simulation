@@ -29,6 +29,7 @@ The repository are supposed to be compiled by [catkin tools](https://catkin-tool
 | Holybro x500 | `--x500`       | ![](.fig/x500_simulation.jpg) |
 | DJI f550     | `--f550`       | ![](.fig/f550_simulation.jpg) |
 | Tarot t650   | `--t650`       | ![](.fig/t650_simulation.jpg) |
+| NAKI II      | `--naki`       | ![](.fig/naki_simulation.jpg) |
 
 ## Examples of tmuxinator simulation sessions
 
