@@ -1,0 +1,5 @@
+planning_tree_fractor: 3 # [-]
+map_resolution: 0.05 # [m] voxel edge size
+
+safe_obstacle_distance: 1.4 # [m]
+euclidean_distance_cutoff: 1.4 # [m]

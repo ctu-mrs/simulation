@@ -1,0 +1,65 @@
+name: simulation
+rot: ./
+pre_window: export UAV_NAME=uav1; export RUN_TYPE=simulation; export UAV_TYPE=t650; export WORLD_NAME=simulation_large_safety_area; export SENSORS="ouster, garmin_down"; export ODOMETRY_TYPE="gps"
+startup_window: status
+windows:
+  - roscore:
+      layout: tiled
+      panes:
+        - roscore
+  - gazebo:
+      layout: tiled
+      panes:
+        - waitForRos; roslaunch mrs_simulation simulation.launch world_name:=mrs_city gui:=true
+        - waitForOdometry; gz camera -c gzclient_camera -f uav1; history -s gz camera -c gzclient_camera -f uav1
+  - status:
+      layout: tiled
+      panes:
+        - waitForSimulation; roslaunch mrs_uav_status status.launch
+  - spawn:
+      layout: tiled
+      panes:
+        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "1 $UAV_TYPE --enable-rangefinder --enable-realsense-down --enable-realsense-front --enable-ouster --ouster-model OS0-128 --use-gpu-ray --pos-file `pwd`/pos.yaml"
+  - control:
+      layout: tiled
+      panes:
+        - waitForOdometry; roslaunch mrs_uav_general core.launch config_odometry:=./custom_configs/odometry.yaml
+  - mapplan:
+      layout: tiled
+      panes:
+        - waitForOdometry; roslaunch octomap_mapping_planning mapplan.launch config_octomap:=./custom_configs/octomap.yaml config_pcl_filter_ouster:=./custom_configs/ouster_filter_mapping.yaml config_pathfinder:=./custom_configs/pathfinder.yaml config_trajectory_generation:=./custom_configs/trajectory_generation.yaml config_pcl_filter_rs_front:=./custom_configs/rs_front_filter.yaml config_pcl_filter_rs_down:=./custom_configs/rs_down_filter.yaml
+  - takeoff:
+      layout: tiled
+      panes:
+        - waitForSimulation; roslaunch mrs_uav_general automatic_start.launch
+        - 'waitForControl;
+          rosservice call /$UAV_NAME/mavros/cmd/arming 1;
+          sleep 2;
+          rosservice call /$UAV_NAME/mavros/set_mode 0 offboard'
+  - goto:
+      layout: tiled
+      panes:
+        - 'history -s rosservice call /$UAV_NAME/pathfinder/goto \"goal: \[10.0, -90.0, 6.5, 0.0\]\"'
+  - map:
+      layout: tiled
+      panes:
+        - 'history -s rosservice call /uav1/octomap_server/save_map example'
+        - 'history -s rosservice call /uav1/octomap_server/load_map example'
+  - fractor:
+      layout: tiled
+      panes:
+        - 'history -s rosservice call /uav1/octomap_server/set_fractor 2'
+  - rviz:
+      layout: tiled
+      panes:
+        - waitForControl; rosrun rviz rviz -d ./rviz.rviz
+        - waitForControl; roslaunch mrs_rviz_plugins load_robot.launch
+  - easy_control:
+      layout: tiled
+      panes:
+        - waitForControl; waitForControl; roslaunch mrs_uav_general logitech_joystick.launch
+        - waitForControl; waitForControl; roslaunch mrs_rviz_plugins rviz_interface.launch
+  - layout:
+      layout: tiled
+      panes:
+        - waitForControl; sleep 3; ~/.i3/layout_manager.sh ./layout.json

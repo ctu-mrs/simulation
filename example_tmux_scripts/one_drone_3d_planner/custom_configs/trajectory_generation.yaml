@@ -1,0 +1,14 @@
+# execution time limiter
+max_time: 0.3 # [s]
+
+# check and fix the max deviation between the input path and the output trajectory
+# by subsampling the original path with more waypoints
+check_trajectory_deviation:
+  enabled: true
+  max_deviation: 0.20 # [m]
+  max_iterations: 6 # [-]
+
+path_straightener:
+  enabled: true
+  max_deviation: 0.20 # [m]
+  max_hdg_deviation: 0.1 # [rad]
