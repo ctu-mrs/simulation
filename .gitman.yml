@@ -36,7 +36,7 @@ sources:
 sources_locked:
   - repo: https://github.com/ctu-mrs/mrs_gazebo_common_resources.git
     name: mrs_gazebo_common_resources
-    rev: 0327b42c48f26d8a17e651d478d1025d8bedde95
+    rev: 3ae5f61b4c58581d2db3c931e5d5d203536a216f
     type: git
     sparse_paths:
       -
