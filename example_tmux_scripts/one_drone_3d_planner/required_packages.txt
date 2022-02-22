@@ -1,7 +1,2 @@
 mrs_octomap_server - octomap_mapping_planning
-mrs_octomap_planner - octomap_mapping_planning
-octomap - octomap_mapping_planning
-lctomap_tools - octomap_mapping_planning
-octomap_ros - octomap_mapping_planning
-octomap_rviz_plugins - octomap_mapping_planning
-octomap_msgs - octomap_mapping_planning
+pathfinder - octomap_mapping_planning
