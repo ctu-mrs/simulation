@@ -1,2 +1,1 @@
-hector_mapping - uav_modules
-mrs_optic_flow - uav_modules
+aloam_slam - uav_modules
