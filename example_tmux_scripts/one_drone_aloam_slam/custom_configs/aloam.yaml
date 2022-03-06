@@ -1,0 +1,3 @@
+scan_line: 128 # [-]
+
+vertical_fov: 90 # [deg]
