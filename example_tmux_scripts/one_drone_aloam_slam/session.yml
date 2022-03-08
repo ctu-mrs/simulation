@@ -1,6 +1,6 @@
 name: simulation
 root: ./
-pre_window: export UAV_NAME=uav1; export RUN_TYPE=simulation; export UAV_TYPE=f450; export ODOMETRY_TYPE=aloam; export WORLD_NAME=simulation_local; export SENSORS="garmin_down"
+pre_window: export UAV_NAME=uav1; export RUN_TYPE=simulation; export UAV_TYPE=f450; export ODOMETRY_TYPE="aloam"; export WORLD_NAME=simulation_local; export SENSORS="garmin_down"
 startup_window: status
 windows:
   - roscore:
@@ -10,7 +10,7 @@ windows:
   - gazebo:
       layout: tiled
       panes:
-        - waitForRos; roslaunch mrs_simulation simulation.launch world_name:=mrs_city gui:=true
+        - waitForRos; roslaunch mrs_simulation simulation.launch world_name:=forest gui:=true
         - waitForOdometry; gz camera -c gzclient_camera -f ${UAV_NAME}; history -s gz camera -c gzclient_camera -f ${UAV_NAME}
   - status:
       layout: tiled
