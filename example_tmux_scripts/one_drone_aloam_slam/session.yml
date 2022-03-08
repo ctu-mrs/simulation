@@ -10,7 +10,7 @@ windows:
   - gazebo:
       layout: tiled
       panes:
-        - waitForRos; roslaunch mrs_simulation simulation.launch world_name:=forest gui:=true
+        - waitForRos; roslaunch mrs_simulation simulation.launch world_name:=mrs_city gui:=true
         - waitForOdometry; gz camera -c gzclient_camera -f ${UAV_NAME}; history -s gz camera -c gzclient_camera -f ${UAV_NAME}
   - status:
       layout: tiled
@@ -23,19 +23,15 @@ windows:
   - pcl_filter:
       layout: tiled
       panes:
-        - waitForOdometry; roslaunch mrs_pcl_tools pcl_filter.launch topic_3d_lidar_in:=/$UAV_NAME/os_cloud_nodelet/points custom_config:=./custom_configs/ouster_filter.yaml
+        - waitForOdometry; roslaunch mrs_pcl_tools pcl_filter.launch topic_3d_lidar_in:=/$UAV_NAME/os_cloud_nodelet/points custom_config:=./custom_configs/ouster_filter.yaml name_suffix:=aloam
   - aloam_slam:
       layout: tiled
       panes:
-        - waitForOdometry; roslaunch aloam_slam aloam.launch points_topic:=/$UAV_NAME/os_cloud_nodelet/points_processed custom_config:=./custom_configs/aloam.yaml
-  - bumper:
-      layout: tiled
-      panes:
-        - waitForOdometry; roslaunch mrs_bumper bumper.launch
+        - waitForOdometry; roslaunch aloam_slam aloam.launch points_topic:=/$UAV_NAME/pcl_filter_aloam/points_processed custom_config:=./custom_configs/aloam.yaml
   - control:
       layout: tiled
       panes:
-        - waitForOdometry; roslaunch mrs_uav_general core.launch config_control_manager:=./custom_configs/control_manager.yaml config_uav_manager:=./custom_configs/uav_manager.yaml
+        - waitForOdometry; roslaunch mrs_uav_general core.launch config_uav_manager:=./custom_configs/uav_manager.yaml
   - takeoff:
       layout: tiled
       panes:
