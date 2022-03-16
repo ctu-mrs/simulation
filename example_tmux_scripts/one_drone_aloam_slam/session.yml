@@ -10,7 +10,7 @@ windows:
   - gazebo:
       layout: tiled
       panes:
-        - waitForRos; roslaunch mrs_simulation simulation.launch world_name:=forest gui:=true
+        - waitForRos; roslaunch mrs_simulation simulation.launch world_name:=mrs_city gui:=true
         - waitForOdometry; gz camera -c gzclient_camera -f ${UAV_NAME}; history -s gz camera -c gzclient_camera -f ${UAV_NAME}
   - status:
       layout: tiled
@@ -27,7 +27,7 @@ windows:
   - aloam_slam:
       layout: tiled
       panes:
-        - waitForOdometry; roslaunch aloam_slam aloam.launch points_topic:=/$UAV_NAME/pcl_filter_aloam/points_processed custom_config:=./custom_configs/aloam.yaml
+        - waitForOdometry; roslaunch aloam_slam aloam.launch points_topic:=/$UAV_NAME/pcl_filter_aloam/points_processed points_proc_diag_topic:=/$UAV_NAME/pcl_filter_aloam/diagnostics
   - control:
       layout: tiled
       panes:
