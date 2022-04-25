@@ -4,6 +4,7 @@ sources:
     name: mrs_gazebo_common_resources
     rev: master
     type: git
+    params:
     sparse_paths:
       -
     links:
@@ -15,6 +16,7 @@ sources:
     name: mrs_simulation
     rev: master
     type: git
+    params:
     sparse_paths:
       -
     links:
@@ -26,6 +28,7 @@ sources:
     name: px4_firmware
     rev: 1.11.2
     type: git
+    params:
     sparse_paths:
       -
     links:
@@ -38,6 +41,7 @@ sources_locked:
     name: mrs_gazebo_common_resources
     rev: 3ae5f61b4c58581d2db3c931e5d5d203536a216f
     type: git
+    params:
     sparse_paths:
       -
     links:
@@ -49,6 +53,7 @@ sources_locked:
     name: mrs_simulation
     rev: 24b190b076129655689c10baa09f18a4b11ac12b
     type: git
+    params:
     sparse_paths:
       -
     links:
@@ -60,6 +65,7 @@ sources_locked:
     name: px4_firmware
     rev: 7c374335db9ae7479f7fe2587a8e64fb9f0df3d5
     type: git
+    params:
     sparse_paths:
       -
     links:
