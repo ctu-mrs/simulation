@@ -4,6 +4,7 @@ sources:
     name: mrs_gazebo_common_resources
     rev: master
     type: git
+    params:
     sparse_paths:
       -
     links:
@@ -15,6 +16,7 @@ sources:
     name: mrs_simulation
     rev: master
     type: git
+    params:
     sparse_paths:
       -
     links:
@@ -26,6 +28,7 @@ sources:
     name: px4_firmware
     rev: 1.11.2
     type: git
+    params:
     sparse_paths:
       -
     links:
@@ -38,6 +41,7 @@ sources_locked:
     name: mrs_gazebo_common_resources
     rev: 08b29b4f767dec97220d7a1e4ad32ad7e50c4dca
     type: git
+    params:
     sparse_paths:
       -
     links:
@@ -47,8 +51,9 @@ sources_locked:
       - git submodule update --init --recursive --depth 1
   - repo: https://github.com/ctu-mrs/mrs_simulation.git
     name: mrs_simulation
-    rev: 4004758531cb3bf3253ff3e91a57245670ecb8c5
+    rev: 54fbcc80e9daed6b8ab59f438a18f97072785470
     type: git
+    params:
     sparse_paths:
       -
     links:
@@ -60,6 +65,7 @@ sources_locked:
     name: px4_firmware
     rev: 7c374335db9ae7479f7fe2587a8e64fb9f0df3d5
     type: git
+    params:
     sparse_paths:
       -
     links:
