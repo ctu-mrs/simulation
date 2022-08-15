@@ -63,7 +63,7 @@ sources_locked:
       - git submodule update --init --recursive --depth 1
   - repo: https://github.com/ctu-mrs/px4_firmware.git
     name: px4_firmware
-    rev: 7c374335db9ae7479f7fe2587a8e64fb9f0df3d5
+    rev: 1ee88accfe526d0c07f4e0b62bff0e81243add07
     type: git
     params:
     sparse_paths:
