@@ -48,7 +48,8 @@ if [ -e /home/$USER/.local/lib ]; then
   sudo chown $USER /home/$USER/.local/lib -R
 fi
 
-$MY_PATH/../ros_packages/px4_firmware/Tools/setup/ubuntu.sh --no-nuttx --no-sim-tool
+[ ! $DEBIAN ] && $MY_PATH/../ros_packages/px4_firmware/Tools/setup/ubuntu.sh --no-nuttx --no-sim-tool
+[ $DEBIAN ] && $MY_PATH/../ros_packages/px4_firmware/Tools/setup/debian.sh --no-nuttx --no-sim-tool
 
 sudo apt-get -y update
 #to fix mrs_gazebo_common_resources build on Ubuntu 20.04
