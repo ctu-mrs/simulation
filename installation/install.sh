@@ -50,7 +50,7 @@ fi
 
 $MY_PATH/../ros_packages/px4_firmware/Tools/setup/ubuntu.sh --no-nuttx --no-sim-tool
 
-sudo apt-get update
+sudo apt-get -y update
 #to fix mrs_gazebo_common_resources build on Ubuntu 20.04
 sudo apt-get upgrade -y libignition-common3*
 
@@ -59,7 +59,7 @@ if [ "$distro" = "18.04" ]; then
   sudo apt-get -y install python-packaging python-toml
 
   #hotfix for missing library in ubuntu 18.04 for mavlink_sitl_gazebo
-  sudo apt-get update --fix-missing
+  sudo apt-get -y update --fix-missing
   sudo apt-get -y install -f
   sudo apt-get -y install libignition-math4
   sudo apt-get -y upgrade libignition-math4
