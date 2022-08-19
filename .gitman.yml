@@ -4,9 +4,9 @@ sources:
     name: mrs_gazebo_common_resources
     rev: master
     type: git
-    params:
     sparse_paths:
       -
+    link:
     links:
       - source: ''
         target: ros_packages/mrs_gazebo_common_resources
@@ -16,9 +16,9 @@ sources:
     name: mrs_simulation
     rev: master
     type: git
-    params:
     sparse_paths:
       -
+    link:
     links:
       - source: ''
         target: ros_packages/mrs_simulation
@@ -28,9 +28,9 @@ sources:
     name: px4_firmware
     rev: v1.12.3
     type: git
-    params:
     sparse_paths:
       -
+    link:
     links:
       - source: ''
         target: ros_packages/px4_firmware
@@ -41,36 +41,33 @@ sources_locked:
     name: mrs_gazebo_common_resources
     rev: 08b29b4f767dec97220d7a1e4ad32ad7e50c4dca
     type: git
-    params:
     sparse_paths:
       -
+    link:
     links:
-      - source: ''
-        target: ros_packages/mrs_gazebo_common_resources
+      -
     scripts:
       - git submodule update --init --recursive --depth 1
   - repo: https://github.com/ctu-mrs/mrs_simulation.git
     name: mrs_simulation
-    rev: 66c282fbacc71994cc8637565adce6488141b856
+    rev: 421937441a6c9566ff22ab554919790935142a0d
     type: git
-    params:
     sparse_paths:
       -
+    link:
     links:
-      - source: ''
-        target: ros_packages/mrs_simulation
+      -
     scripts:
       - git submodule update --init --recursive --depth 1
-  - repo: https://github.com/ctu-mrs/px4_firmware.git
+  - repo: https://github.com/PX4/PX4-Autopilot.git
     name: px4_firmware
     rev: 2e8918da66af37922ededee1cc2d2efffec4cfb2
     type: git
-    params:
     sparse_paths:
       -
+    link:
     links:
-      - source: ''
-        target: ros_packages/px4_firmware
+      -
     scripts:
       - git submodule update --init --recursive --depth 1
 default_group: ''
