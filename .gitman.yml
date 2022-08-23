@@ -36,6 +36,18 @@ sources:
         target: ros_packages/px4_firmware
     scripts:
       - git submodule update --init --recursive --depth 1
+  - repo: https://github.com/ctu-mrs/px4_sitl_gazebo.git
+    name: mavlink_sitl_gazebo
+    rev: bd941689b6e9d3e628a1e786d1d042d48005dc7b
+    type: git
+    sparse_paths:
+      -
+    link:
+    links:
+      - source: ''
+        target: ros_packages/mavlink_sitl_gazebo
+    scripts:
+      - git submodule update --init --recursive --depth 1
 sources_locked:
   - repo: https://github.com/ctu-mrs/mrs_gazebo_common_resources.git
     name: mrs_gazebo_common_resources
