@@ -26,7 +26,7 @@ sources:
       - git submodule update --init --recursive --depth 1
   - repo: https://github.com/PX4/PX4-Autopilot.git
     name: px4_firmware
-    rev: v1.13.0
+    rev: v1.13.1
     type: git
     sparse_paths:
       -
@@ -73,7 +73,7 @@ sources_locked:
       - git submodule update --init --recursive --depth 1
   - repo: https://github.com/PX4/PX4-Autopilot.git
     name: px4_firmware
-    rev: 6823cbc4140e29568f00e1211ae60e057adb1a1f
+    rev: v1.13.1
     type: git
     sparse_paths:
       -
