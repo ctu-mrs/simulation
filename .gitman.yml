@@ -84,7 +84,7 @@ sources_locked:
       - git submodule update --init --recursive --depth 1
   - repo: https://github.com/ctu-mrs/px4_sitl_gazebo.git
     name: mavlink_sitl_gazebo
-    rev: 017dad4db7824b947ed4ff88a0bef37c132fd433
+    rev: 56b5508b72f40339448f3525dd4dc51f30512cbd
     type: git
     sparse_paths:
       -
