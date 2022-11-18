@@ -24,7 +24,7 @@ sources:
         target: ros_packages/mrs_simulation
     scripts:
       - git submodule update --init --recursive --depth 1
-  - repo: https://github.com/PX4/PX4-Autopilot.git
+  - repo: https://github.com/ctu-mrs/px4_firmware.git
     name: px4_firmware
     rev: v1.13.1
     type: git
@@ -71,7 +71,7 @@ sources_locked:
       -
     scripts:
       - git submodule update --init --recursive --depth 1
-  - repo: https://github.com/PX4/PX4-Autopilot.git
+  - repo: https://github.com/ctu-mrs/px4_firmware.git
     name: px4_firmware
     rev: v1.13.1
     type: git
