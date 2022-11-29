@@ -63,8 +63,8 @@ if [ "$distro" = "18.04" ]; then
   #hotfix for missing library in ubuntu 18.04 for mavlink_sitl_gazebo
   sudo apt-get -y update --fix-missing
   sudo apt-get -y install -f
-  sudo apt-get -y install libignition-math*
-  sudo apt-get -y upgrade libignition-math*
+  # sudo apt-get -y install libignition-math*
+  # sudo apt-get -y upgrade libignition-math*
 
 elif [ "$distro" = "20.04" ]; then
   sudo -H pip3 install --user packaging
