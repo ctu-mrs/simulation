@@ -61,10 +61,10 @@ if [ "$distro" = "18.04" ]; then
   sudo apt-get -y install python-packaging python-toml
 
   #hotfix for missing library in ubuntu 18.04 for mavlink_sitl_gazebo
-  sudo apt-get -y update --fix-missing
-  sudo apt-get -y install -f
-  sudo apt-get -y install libignition-math4
-  sudo apt-get -y upgrade libignition-math4
+  # sudo apt-get -y update --fix-missing
+  # sudo apt-get -y install -f
+  # sudo apt-get -y install libignition-math4
+  # sudo apt-get -y upgrade libignition-math4
 
 elif [ "$distro" = "20.04" ]; then
   sudo -H pip3 install --user packaging
