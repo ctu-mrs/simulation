@@ -73,7 +73,7 @@ sources_locked:
       - git submodule update --init --recursive --depth 1
   - repo: https://github.com/ctu-mrs/px4_firmware.git
     name: px4_firmware
-    rev: 7eff914511d9e64b9039d481a52f05f38f367424
+    rev: 18e2109234f7243c19a4a7d2c410dc232d7f80f9
     type: git
     sparse_paths:
       -
@@ -84,7 +84,7 @@ sources_locked:
       - git submodule update --init --recursive --depth 1
   - repo: https://github.com/ctu-mrs/px4_sitl_gazebo.git
     name: mavlink_sitl_gazebo
-    rev: 56b5508b72f40339448f3525dd4dc51f30512cbd
+    rev: 017dad4db7824b947ed4ff88a0bef37c132fd433
     type: git
     sparse_paths:
       -
