@@ -11,7 +11,7 @@ sources:
       - source: ''
         target: ros_packages/mrs_gazebo_common_resources
     scripts:
-      - git submodule update --init --recursive --depth 1
+      - git submodule update --init --recursive
   - repo: https://github.com/ctu-mrs/mrs_simulation.git
     name: mrs_simulation
     rev: master
@@ -23,7 +23,7 @@ sources:
       - source: ''
         target: ros_packages/mrs_simulation
     scripts:
-      - git submodule update --init --recursive --depth 1
+      - git submodule update --init --recursive
   - repo: https://github.com/ctu-mrs/px4_firmware.git
     name: px4_firmware
     rev: 1.13.1
@@ -35,7 +35,7 @@ sources:
       - source: ''
         target: ros_packages/px4_firmware
     scripts:
-      - git submodule update --init --recursive --depth 1
+      - git submodule update --init --recursive
   - repo: https://github.com/ctu-mrs/px4_sitl_gazebo.git
     name: mavlink_sitl_gazebo
     rev: bd941689b6e9d3e628a1e786d1d042d48005dc7b
@@ -47,7 +47,7 @@ sources:
       - source: ''
         target: ros_packages/mavlink_sitl_gazebo
     scripts:
-      - git submodule update --init --recursive --depth 1
+      - git submodule update --init --recursive
 sources_locked:
   - repo: https://github.com/ctu-mrs/mrs_gazebo_common_resources.git
     name: mrs_gazebo_common_resources
@@ -59,7 +59,7 @@ sources_locked:
     links:
       -
     scripts:
-      - git submodule update --init --recursive --depth 1
+      - git submodule update --init --recursive
   - repo: https://github.com/ctu-mrs/mrs_simulation.git
     name: mrs_simulation
     rev: 9a9d94232fc3a7ab7a1f6c41872ccfe67c4b1b0e
@@ -70,7 +70,7 @@ sources_locked:
     links:
       -
     scripts:
-      - git submodule update --init --recursive --depth 1
+      - git submodule update --init --recursive
   - repo: https://github.com/ctu-mrs/px4_firmware.git
     name: px4_firmware
     rev: 18e2109234f7243c19a4a7d2c410dc232d7f80f9
@@ -81,7 +81,7 @@ sources_locked:
     links:
       -
     scripts:
-      - git submodule update --init --recursive --depth 1
+      - git submodule update --init --recursive
   - repo: https://github.com/ctu-mrs/px4_sitl_gazebo.git
     name: mavlink_sitl_gazebo
     rev: 017dad4db7824b947ed4ff88a0bef37c132fd433
@@ -92,7 +92,7 @@ sources_locked:
     links:
       -
     scripts:
-      - git submodule update --init --recursive --depth 1
+      - git submodule update --init --recursive
 default_group: ''
 groups:
   -
