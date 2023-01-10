@@ -15,6 +15,9 @@ distro=`lsb_release -r | awk '{ print $2 }'`
 [ "$distro" = "18.04" ] && ROS_DISTRO="melodic"
 [ "$distro" = "20.04" ] && ROS_DISTRO="noetic"
 
+debian=`lsb_release -d | grep -i debian | wc -l`
+[[ "$debian" -eq "1" ]] && ROS_DISTRO="noetic" && distro="20.04" && DEBIAN=true
+
 ## | ----------- go to the directory of this script ----------- |
 
 cd "$MY_PATH"
@@ -45,18 +48,20 @@ if [ -e /home/$USER/.local/lib ]; then
   sudo chown $USER /home/$USER/.local/lib -R
 fi
 
-$MY_PATH/../ros_packages/px4_firmware/Tools/setup/ubuntu.sh --no-nuttx --no-sim-tool
+[ ! $DEBIAN ] && $MY_PATH/../ros_packages/px4_firmware/Tools/setup/ubuntu.sh --no-nuttx --no-sim-tool
+[ $DEBIAN ] && $MY_PATH/../ros_packages/px4_firmware/Tools/setup/debian.sh --no-nuttx --no-sim-tool
 
-sudo apt-get update
-#to fix mrs_gazebo_common_resources build on Ubuntu 20.04
-sudo apt-get upgrade -y libignition-common3*
+sudo apt-get -y update
+
+# to fix mrs_gazebo_common_resources build on Ubuntu 20.04
+# sudo apt-get upgrade -y libignition-common3*
 
 if [ "$distro" = "18.04" ]; then
   sudo -H pip install --user packaging toml
   sudo apt-get -y install python-packaging python-toml
 
   #hotfix for missing library in ubuntu 18.04 for mavlink_sitl_gazebo
-  sudo apt-get update --fix-missing
+  sudo apt-get -y update --fix-missing
   sudo apt-get -y install -f
   sudo apt-get -y install libignition-math4
   sudo apt-get -y upgrade libignition-math4
