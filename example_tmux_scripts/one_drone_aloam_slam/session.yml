@@ -19,7 +19,7 @@ windows:
   - spawn:
       layout: tiled
       panes:
-        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "1 $UAV_TYPE --enable-ouster --enable-rangefinder --ouster-model OS0-128 --use-gpu-ray --pos_file `pwd`/pos.yaml"
+        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "1 $UAV_TYPE --enable-ouster --enable-rangefinder --ouster-model OS0-32 --use-gpu-ray --pos_file `pwd`/pos.yaml"
   - pcl_filter:
       layout: tiled
       panes:
