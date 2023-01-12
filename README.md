@@ -1,21 +1,21 @@
 # MRS Gazebo Simulation
 ![](.fig/thumbnail.jpg)
 
-| Simulation build status | [![Build Status](https://github.com/ctu-mrs/simulation/workflows/Melodic/badge.svg)](https://github.com/ctu-mrs/simulation/actions) | [![Build Status](https://github.com/ctu-mrs/simulation/workflows/Noetic/badge.svg)](https://github.com/ctu-mrs/simulation/actions) |
-|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| Simulation build status | [![Build Status](https://github.com/ctu-mrs/simulation/workflows/Noetic/badge.svg)](https://github.com/ctu-mrs/simulation/actions) |
+|-------------------------|------------------------------------------------------------------------------------------------------------------------------------|
 
 ## Submodules
 
-| ROS Package                                                                           | 18.04                                                                                                                                                                 | 20.04                                                                                                                                                                |
-|---------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [mrs_simulation](https://github.com/ctu-mrs/mrs_simulation)                           | [![Build Status](https://github.com/ctu-mrs/mrs_simulation/workflows/Melodic/badge.svg)](https://github.com/ctu-mrs/mrs_simulation/actions)                           | [![Build Status](https://github.com/ctu-mrs/mrs_simulation/workflows/Noetic/badge.svg)](https://github.com/ctu-mrs/mrs_simulation/actions)                           |
-| [mrs_gazebo_common_resources](https://github.com/ctu-mrs/mrs_gazebo_common_resources) | [![Build Status](https://github.com/ctu-mrs/mrs_gazebo_common_resources/workflows/Melodic/badge.svg)](https://github.com/ctu-mrs/mrs_gazebo_common_resources/actions) | [![Build Status](https://github.com/ctu-mrs/mrs_gazebo_common_resources/workflows/Noetic/badge.svg)](https://github.com/ctu-mrs/mrs_gazebo_common_resources/actions) |
-| [px4](https://github.com/ctu-mrs/px4_firmware)                                        | [![Build Status](https://github.com/ctu-mrs/px4_firmware/workflows/Melodic/badge.svg)](https://github.com/ctu-mrs/px4_firmware/actions)                               | [![Build Status](https://github.com/ctu-mrs/px4_firmware/workflows/Noetic/badge.svg)](https://github.com/ctu-mrs/px4_firmware/actions)                               |
-| [mavlink_sitl_gazebo](https://github.com/ctu-mrs/px4_sitl_gazebo)                     |                                                                                                                                                                       |                                                                                                                                                                      |
+| ROS Package                                                                           | 20.04                                                                                                                                                                |
+|---------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [mrs_simulation](https://github.com/ctu-mrs/mrs_simulation)                           | [![Build Status](https://github.com/ctu-mrs/mrs_simulation/workflows/Noetic/badge.svg)](https://github.com/ctu-mrs/mrs_simulation/actions)                           |
+| [mrs_gazebo_common_resources](https://github.com/ctu-mrs/mrs_gazebo_common_resources) | [![Build Status](https://github.com/ctu-mrs/mrs_gazebo_common_resources/workflows/Noetic/badge.svg)](https://github.com/ctu-mrs/mrs_gazebo_common_resources/actions) |
+| [px4](https://github.com/ctu-mrs/px4_firmware)                                        | [![Build Status](https://github.com/ctu-mrs/px4_firmware/workflows/Noetic/badge.svg)](https://github.com/ctu-mrs/px4_firmware/actions)                               |
+| [mavlink_sitl_gazebo](https://github.com/ctu-mrs/px4_sitl_gazebo)                     |                                                                                                                                                                      |
 
 ## System requirements
 
-Required OS is Ubuntu 20.04 LTS 64-bit (Ubuntu 18.04 LTS 64-bit) or its flavors that can install ROS Noetic (ROS Melodic).
+Required OS is Ubuntu 20.04 LTS 64-bit or its flavors that can install ROS Noetic.
 The suggested variant of OS installation is dual boot instead of virtualization that can be slow and can not handle well the simulation GUI.
 We use [Gitman](https://github.com/jacebrowning/gitman) to manage the repository **submodules**.
 The repository are supposed to be compiled by [catkin tools](https://catkin-tools.readthedocs.io).
