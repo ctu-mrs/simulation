@@ -26,7 +26,7 @@ sources:
       - git submodule update --init --recursive
   - repo: https://github.com/ctu-mrs/px4_firmware.git
     name: px4_firmware
-    rev: 1.13.1
+    rev: 1.13.2
     type: git
     params:
     sparse_paths:
@@ -51,18 +51,19 @@ sources:
 sources_locked:
   - repo: https://github.com/ctu-mrs/mrs_gazebo_common_resources.git
     name: mrs_gazebo_common_resources
-    rev: 08b29b4f767dec97220d7a1e4ad32ad7e50c4dca
+    rev: 13c56ea9c98f8590ebc5aee7d13a0e9ab8d7d26f
     type: git
     params:
     sparse_paths:
       -
     links:
-      -
+      - source: ''
+        target: ros_packages/mrs_gazebo_common_resources
     scripts:
       - git submodule update --init --recursive
   - repo: https://github.com/ctu-mrs/mrs_simulation.git
     name: mrs_simulation
-    rev: c13b6e3039c41628848863e636a34dc1f881370f
+    rev: 1d898a825e901e4282e5cb6de2a400de375aa675
     type: git
     params:
     sparse_paths:
@@ -74,24 +75,26 @@ sources_locked:
       - git submodule update --init --recursive
   - repo: https://github.com/ctu-mrs/px4_firmware.git
     name: px4_firmware
-    rev: d51aeb77aa249d77a81ccaf648f94a513242dea6
+    rev: 531b63a2935ca6130a2ab52c835faddb010e46b2
     type: git
     params:
     sparse_paths:
       -
     links:
-      -
+      - source: ''
+        target: ros_packages/px4_firmware
     scripts:
       - git submodule update --init --recursive
   - repo: https://github.com/ctu-mrs/px4_sitl_gazebo.git
     name: mavlink_sitl_gazebo
-    rev: 017dad4db7824b947ed4ff88a0bef37c132fd433
+    rev: bd941689b6e9d3e628a1e786d1d042d48005dc7b
     type: git
     params:
     sparse_paths:
       -
     links:
-      -
+      - source: ''
+        target: ros_packages/mavlink_sitl_gazebo
     scripts:
       - git submodule update --init --recursive
 default_group: ''
