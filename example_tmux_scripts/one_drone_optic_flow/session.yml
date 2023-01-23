@@ -1,7 +1,7 @@
 name: simulation
 root: ./
 on_project_start: nums=$(shuf -i 1-30 -n 30 | tr '\n' " "); echo "UAV_NUMBERS=($nums)" > /tmp/random_uav_numbers;
-pre_window: source /tmp/random_uav_numbers; export UAV_NAME="uav${UAV_NUMBERS[1]}"; export RUN_TYPE=simulation; export ODOMETRY_TYPE=optflow; export UAV_TYPE=t650; export WORLD_NAME=simulation_local; export SENSORS="garmin_down"
+pre_window: source /tmp/random_uav_numbers; export UAV_NAME="uav${UAV_NUMBERS[1]}"; export RUN_TYPE=simulation; export ODOMETRY_TYPE=optflow; export UAV_TYPE=x500; export WORLD_NAME=simulation_local; export SENSORS="garmin_down"
 startup_window: status
 windows:
   - roscore:

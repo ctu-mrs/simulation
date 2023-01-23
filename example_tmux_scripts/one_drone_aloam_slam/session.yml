@@ -1,6 +1,6 @@
 name: simulation
 root: ./
-pre_window: export UAV_NAME=uav1; export RUN_TYPE=simulation; export UAV_TYPE=f450; export ODOMETRY_TYPE="aloam"; export WORLD_NAME=simulation_local; export SENSORS="garmin_down"
+pre_window: export UAV_NAME=uav1; export RUN_TYPE=simulation; export UAV_TYPE=x500; export ODOMETRY_TYPE="aloam"; export WORLD_NAME=simulation_local; export SENSORS="garmin_down"
 startup_window: status
 windows:
   - roscore:
@@ -19,7 +19,7 @@ windows:
   - spawn:
       layout: tiled
       panes:
-        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "1 $UAV_TYPE --enable-ouster --enable-rangefinder --ouster-model OS0-128 --use-gpu-ray --pos_file `pwd`/pos.yaml"
+        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "1 $UAV_TYPE --enable-ouster --enable-rangefinder --ouster-model OS0-64 --use-gpu-ray --pos_file `pwd`/pos.yaml"
   - pcl_filter:
       layout: tiled
       panes:
