@@ -4,9 +4,9 @@ sources:
     name: mrs_gazebo_common_resources
     rev: master
     type: git
+    params:
     sparse_paths:
       -
-    link:
     links:
       - source: ''
         target: ros_packages/mrs_gazebo_common_resources
@@ -16,9 +16,9 @@ sources:
     name: mrs_simulation
     rev: master
     type: git
+    params:
     sparse_paths:
       -
-    link:
     links:
       - source: ''
         target: ros_packages/mrs_simulation
@@ -28,9 +28,9 @@ sources:
     name: px4_firmware
     rev: 1.13.2
     type: git
+    params:
     sparse_paths:
       -
-    link:
     links:
       - source: ''
         target: ros_packages/px4_firmware
@@ -40,9 +40,9 @@ sources:
     name: mavlink_sitl_gazebo
     rev: firmware_1.13.2
     type: git
+    params:
     sparse_paths:
       -
-    link:
     links:
       - source: ''
         target: ros_packages/mavlink_sitl_gazebo
@@ -53,9 +53,9 @@ sources_locked:
     name: mrs_gazebo_common_resources
     rev: 13c56ea9c98f8590ebc5aee7d13a0e9ab8d7d26f
     type: git
+    params:
     sparse_paths:
       -
-    link:
     links:
       - source: ''
         target: ros_packages/mrs_gazebo_common_resources
@@ -65,9 +65,9 @@ sources_locked:
     name: mrs_simulation
     rev: 9dff1cdf243c2f26527d81e3082828c5e5e2b9d9
     type: git
+    params:
     sparse_paths:
       -
-    link:
     links:
       - source: ''
         target: ros_packages/mrs_simulation
@@ -77,9 +77,9 @@ sources_locked:
     name: px4_firmware
     rev: 531b63a2935ca6130a2ab52c835faddb010e46b2
     type: git
+    params:
     sparse_paths:
       -
-    link:
     links:
       - source: ''
         target: ros_packages/px4_firmware
@@ -89,11 +89,12 @@ sources_locked:
     name: mavlink_sitl_gazebo
     rev: dda6cdf0c040e33f7bfc80f6c7719c524b053f41
     type: git
+    params:
     sparse_paths:
       -
-    link:
     links:
-      -
+      - source: ''
+        target: ros_packages/mavlink_sitl_gazebo
     scripts:
       - git submodule update --init --recursive
 default_group: ''
