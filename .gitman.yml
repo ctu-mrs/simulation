@@ -63,7 +63,7 @@ sources_locked:
       - git submodule update --init --recursive
   - repo: https://github.com/ctu-mrs/mrs_simulation.git
     name: mrs_simulation
-    rev: 493971bb4dd6e5777bb9e763a85268e5ce5e5120
+    rev: bec964123ab8cfe23bac6d00de87aeb96f716f59
     type: git
     params:
     sparse_paths:
