@@ -21,6 +21,10 @@ windows:
       layout: tiled
       panes:
         - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "${UAV_NUMBERS[1]} $UAV_TYPE --enable-rangefinder"
+  - hw_api:
+      layout: tiled
+      panes:
+        - waitForRos; roslaunch mrs_uav_hw_api api.launch custom_config:=`rospack find mrs_uav_px4_api`/config/px4_api.yaml
   - control:
       layout: tiled
       panes:
