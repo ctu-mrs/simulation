@@ -63,7 +63,7 @@ sources_locked:
       - git submodule update --init --recursive
   - repo: https://github.com/ctu-mrs/mrs_simulation.git
     name: mrs_simulation
-    rev: 9f7ad496b591fe0982f2a69c6287702b87fd63e9
+    rev: 9759e8a9749fc5c30947c4dd91d59ce42910e8f9
     type: git
     params:
     sparse_paths:
@@ -75,7 +75,7 @@ sources_locked:
       - git submodule update --init --recursive
   - repo: https://github.com/ctu-mrs/px4_firmware.git
     name: px4_firmware
-    rev: 531b63a2935ca6130a2ab52c835faddb010e46b2
+    rev: 6d62e8a9fdfbd6ca129e727dc4325e1cc5d373ff
     type: git
     params:
     sparse_paths:
