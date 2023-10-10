@@ -1,17 +1,19 @@
-# MRS Gazebo Simulation
-![](.fig/thumbnail.jpg)
+# The Old Gazebo Simulation
 
-| Simulation build status | [![Build Status](https://github.com/ctu-mrs/simulation/workflows/Noetic/badge.svg)](https://github.com/ctu-mrs/simulation/actions) |
-|-------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+> :warning: **Attention please: This package is no longer maintained!!!**
+>
+> This is an old package that is no longer maintained.
+> The new version of the Gazebo Simulation is located [here](https://github.com/ctu-mrs/mrs_uav_gazebo_simulation).
+> This repository will be erased soon
 
 ## Submodules
 
-| ROS Package                                                                           | 20.04                                                                                                                                                                |
-|---------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [mrs_simulation](https://github.com/ctu-mrs/mrs_simulation)                           | [![Build Status](https://github.com/ctu-mrs/mrs_simulation/workflows/Noetic/badge.svg)](https://github.com/ctu-mrs/mrs_simulation/actions)                           |
-| [mrs_gazebo_common_resources](https://github.com/ctu-mrs/mrs_gazebo_common_resources) | [![Build Status](https://github.com/ctu-mrs/mrs_gazebo_common_resources/workflows/Noetic/badge.svg)](https://github.com/ctu-mrs/mrs_gazebo_common_resources/actions) |
-| [px4](https://github.com/ctu-mrs/px4_firmware)                                        | [![Build Status](https://github.com/ctu-mrs/px4_firmware/workflows/Noetic/badge.svg)](https://github.com/ctu-mrs/px4_firmware/actions)                               |
-| [mavlink_sitl_gazebo](https://github.com/ctu-mrs/px4_sitl_gazebo)                     |                                                                                                                                                                      |
+| ROS Package                                                                           |
+|---------------------------------------------------------------------------------------|
+| [mrs_simulation](https://github.com/ctu-mrs/mrs_simulation)                           |
+| [mrs_gazebo_common_resources](https://github.com/ctu-mrs/mrs_gazebo_common_resources) |
+| [px4](https://github.com/ctu-mrs/px4_firmware)                                        |
+| [mavlink_sitl_gazebo](https://github.com/ctu-mrs/px4_sitl_gazebo)                     |
 
 ## System requirements
 
@@ -45,10 +47,6 @@ Bare tmux script (similar to the one used on real UAVs):
 - [example_tmux_scripts/just_flying_bare_tmux](example_tmux_scripts/just_flying_bare_tmux)
 
 For detail description of script capabilities for spawning vehicles see [mrs_simulation](https://github.com/ctu-mrs/mrs_simulation).
-
-## Installing simulation
-
-Install the whole [MRS UAV system](https://github.com/ctu-mrs/mrs_uav_system).
 
 ## Finishing your .bashrc
 

@@ -2,7 +2,7 @@ location: .gitman
 sources:
   - repo: https://github.com/ctu-mrs/mrs_gazebo_common_resources.git
     name: mrs_gazebo_common_resources
-    rev: master
+    rev: old_system
     type: git
     params:
     sparse_paths:
@@ -51,7 +51,7 @@ sources:
 sources_locked:
   - repo: https://github.com/ctu-mrs/mrs_gazebo_common_resources.git
     name: mrs_gazebo_common_resources
-    rev: 899f3161563d2a0875894beb796d944b9c4e67fb
+    rev: 067a8decbc52aedff07d7df3bec0e046e507b01c
     type: git
     params:
     sparse_paths:
